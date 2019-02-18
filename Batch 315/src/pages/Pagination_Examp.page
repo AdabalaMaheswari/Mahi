@@ -1,0 +1,19 @@
+<apex:page controller="Pagination_Example">
+    <apex:form >
+   <apex:pageBlock mode="mainDetail">
+    	<apex:pageBlockButtons location="top">
+             <apex:commandButton value="First" action="{!controller.first}" rendered="{!controller.hasPrevious}"  />
+             <apex:commandButton value="Previous" action="{!controller.Previous}"  rendered="{!controller.hasPrevious}"/>
+             <apex:commandButton value="Next" action="{!controller.Next}" rendered="{!controller.hasNext}" />
+             <apex:commandButton value="Last" action="{!controller.Last}" rendered="{!controller.hasNext}" />
+       	</apex:pageBlockButtons>
+    
+      <apex:dataTable value="{!optyList}" var="a" rules="rows" frame="border" cellpadding="5px" width="800"  >
+          <apex:column headervalue="Name" value="{!a.name}" />
+          <apex:column headerValue="StageName" value="{!a.stageName}" />
+          <apex:column headerValue="CloseDate" value="{!a.closeDate}" />
+      </apex:dataTable>
+       <center> {!controller.PageNumber *5} of {!controller.ResultSize}</center>
+ </apex:pageBlock>
+  </apex:form>
+</apex:page>

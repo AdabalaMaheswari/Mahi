@@ -1,0 +1,63 @@
+<apex:page >
+    Sharing Rules :
+    ---------------
+
+	1. Sharing rules are used to grant extra permission on records apart from 
+	   what user is already getting through OWD .
+	   
+	2. Sharing Rules are classified as 
+	
+		a. Owner Based Sharing Rules 
+		
+		b. Criteria Based Sharing Rules 
+		
+		c. Manual Sharing Rules 
+		
+		d. Apex Based Sharing Rules
+
+	3. Using sharing Rules we can grant access of Read|Write on the record.
+	
+	4. Owner based sharing Rules :
+	
+		Records which are owned by the users who belongs to given role |role and sub |public Group|Queue.
+		are shared with the users  who have given role |role and sub |public group  with read or Read/write
+		access .
+		
+		
+		Example 1: 
+		Records which are owned by the users who have HRManager role are shared with the users 
+		who belongs to the role clerk with read  access.
+		
+		Example 2: 
+		Records which are owner by the users who belongs to public Group capital are shared with 
+		role and sub HRManager with read and write access.
+		
+		
+	5. Criteria based sharing rules : 
+
+		Records which are meeting the given the condition are shared with the users who belongs 
+		to given Role  | Role and Sub | public Group with Read or Read and Write access.
+		
+		Example : 
+		
+		All the Opportunities whoes stageName is closed won are shared with Users who role 
+		Sales  Manager with Read Access 
+		
+		Example 2: 
+		
+		All the Accounts whoes rating is Hot are shared with the users who belongs to the 
+		public Group Capital with read or Read and write access.
+		
+		
+	6. Manual Sharing Rules :
+		
+		a. If you want to share a particular record with a specific role \Role and Sub|Public Group \user
+		   then we user manual sharing rule .
+		   
+		b. Open the detail page of the record,Click on sharing button and select the users 
+		
+	
+	7. Apex Based Sharing Rules : 
+	
+		We can also share the records using apex programming 
+</apex:page>

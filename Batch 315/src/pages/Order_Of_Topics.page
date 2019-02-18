@@ -1,0 +1,54 @@
+<apex:page >
+    SNO         Date                Topic
+    =================================================
+    1           14-11-2018          VF _Introduction
+    2           15-11-2018          Page,SectionHeader,form,commandButton,CommandLink   
+    3           16-11-2018          PageBlock,PageBlockButtons,PageBlockSection
+    4           19-11-2018          StandardController : Attribute and  inputField ,outputField,InlineEditSupport
+                                    Global Actions 
+    5           20-11-2018          PageBlockTable ,DataTable,DataList,Repeat, TabPanel,Tab,ListViewOptions
+    6           21-11-2018          Extentions of PageBlockTable and Properties and CSS Basics 
+    7.          22-11-2018          InputText, PageBlockSectionItem, SelectOption
+    8.          23-11-2018          Apex Controller in the VF page      
+    9.          26-11-2018          PageMessages , PageReferences,Tabpanle with apex
+    10.         27-11-2018          Sobject and Wrapper classes
+    11.         28-11-2018          Arrays
+    12.         29-11-2018          List
+    13.         30-11-018           List
+    14.         03-12-2018          List useCases
+    15.         04-12-2018          Set 
+    16.         05-12-2018          SOQL
+    17.         06-12-2018          SOQL
+    18.         07-12-2018          SOQL
+    19.         10-12-2018          S0QL (Parent-Child),MAP
+    20          11-12-2018          SOQL (Child-Parent) and Aggregate Functions
+    21.         12-12-2018          Dynamic-SOQL,SOSL
+    22.         13-12-2018          DML
+    23.         14-12-2018          DML
+    24.         17-12-2018          DML
+    25.         18-12-2018          future methods,queueable
+    26.         19-12-2018          BatchApex ,Governing Limits 
+    27.         21-12-2018          Schedule
+    28.         24-12-2018          Triggers Insert
+    29.         25-12-2018          Triggers Update,Dynamic Sharing ,
+    30          26-12-2018          Triggers Delete ,Dynamic Approval
+    31          27-12-2018          Triggers
+    32.         28-12-2018          Extentions  
+    33          29-12-2018          Project-1
+    30.         30-12-2018          Project-1   
+    31          31-12-2018          Triggers 
+    31.         1-1-2019            // Break        
+    32.         2-1-2019            Email Programming       
+    33.         3-1-2019            Inbound ,Custom Settings , Custom Metdatadata   
+    34.         4-1-2019            Schema
+    35.         5-1-2019            Project-1   
+    36          6-1-2019            Project-1 and 2 
+    37          7-1-2019            Script  
+    38          8-1-2018            Script
+    39          9-1-2018            Script
+    41          10-1-2019           Deployment
+    42          11-1-2019           Deployment
+    43          12-1-2019           Project-3
+    44          13-1-2019---18 Holidays         
+                
+</apex:page>

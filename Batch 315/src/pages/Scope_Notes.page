@@ -1,0 +1,47 @@
+<apex:page >
+    {} ===> Scope 
+    Example: 
+    {
+    	logic 
+    }
+    Example : scope of if
+    if ()
+    {
+    
+    }
+    
+    Example : scope of for
+    for(){
+    
+    }
+    
+    Example : scope of show 
+    show(){
+    
+    }
+    
+    Example : Scope of example 
+    class Example{
+    
+    }
+    
+    Example : scope of Invove_Data
+    class Invoice_Data{
+    
+    }
+    Example : scope of Demo
+    interface Demo{
+    
+    }
+    
+    Example : scope of try 
+    try{
+    
+    }
+    
+    Example : scope of catch
+    catch(){
+    
+    }
+
+</apex:page>

@@ -1,0 +1,57 @@
+<apex:page >
+    Static: 
+    -------
+    1. static is a keyword  
+    2. It can be used along with varaible and method.
+    3. If you static keyword along with variable ,then it is called static variable
+    <!--	static <DataType> <variableName>	-->
+    4. Static Variable : 
+    	a. if you define any variable as static memory will be allocated only once.
+    	b. Memory will be allocated on the name of class.
+    	c. Memory for the static variables will be allocated at the time of loading the class.
+    	d. Static variables are reffered using classname .
+    	e. Static variables can be accessed by all the objects of the class.
+    	Example : 
+    	public class Static_Example_1 {
+			public Integer aval=0;
+    		public static Integer bval=0;
+    		public void add(){
+        		aval=aval+10;
+        		bval=bval+10;
+    		}
+    		public static void callMe(){
+    			System.debug(aval); //Error : Non-Static Members cannot be accessed in static method
+    			System.debug(bval);
+    			Integer cval=10;
+    			System.debug(cval);
+    		}
+		}
+    	Execution : 
+    	Static_Example_1 se1 =new Static_Example_1();
+		Static_Example_1 se2 =new Static_Example_1();
+		se1.add();
+		System.debug('SE1 :AVal ='+se1.aval);
+		System.debug('SE2 :AVal='+se2.aval);
+		System.debug('BVal :'+Static_Example_1.bval);
+		se1.add();
+		System.debug('SE1 :AVal ='+se1.aval);
+		System.debug('SE2 :AVal='+se2.aval);
+		System.debug('BVal :'+Static_Example_1.bval);
+		se2.add();
+		System.debug('SE1 :AVal ='+se1.aval);
+		System.debug('SE2 :AVal='+se2.aval);
+		System.debug('BVal :'+Static_Example_1.bval);
+    o/p : SE1 :AVal : 10 
+    	: SE2 :Aval : 0
+    	: BVal: 10
+    	: SE1 :Aval	: 20
+    	: SE2 :Aval	: 0
+    	: BVal: 20
+    	: SE1 : Aval: 20
+    	: SE2 : AVal: 10
+    	: BVal: 30
+    5. Static method : 
+    	1. If you define any method as static ,it can be accessed using classname.
+    	2. Static method will reffer to only static vairable of the class.
+    	ClassName.methodName();
+</apex:page>

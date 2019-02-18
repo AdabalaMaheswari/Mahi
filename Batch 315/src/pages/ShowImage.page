@@ -1,0 +1,15 @@
+<apex:page >
+
+<apex:image url="{!URLFOR($Resource.vfimagetest, 'cats/kitten1.jpg')}" />
+
+</apex:page>
+<!-- 
+CASE( status_of_Student__c ,'Interested',IMAGE('/resource/color/green.png','interested',30,30), 
+'Not',IMAGE('/resource/color/red.png','not',30,30),
+'Processing',IMAGE('/resource/color/blue.png','processing',30,30),
+'pending',IMAGE('/resource/color/black.png','pending',30,30),
+'closed',IMAGE('/resource/color/white.jpg','closed',30,30),
+'lost',IMAGE('/resource/color/yellow.jpg','lost',30,30),
+null
+) 
+-->

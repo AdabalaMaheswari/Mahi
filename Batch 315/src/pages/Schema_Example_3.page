@@ -1,0 +1,10 @@
+<apex:page controller="Schema_Example_3">
+    <apex:form >
+    	<apex:pageBlock title="result">
+        	<apex:pageBlockTable value="{!fldMap}" var="a">
+                <apex:column value="{!a}" headerValue="Name" />
+                <apex:column value="{!fldMap[a]}" headerValue="Property"/>
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

@@ -1,0 +1,216 @@
+<apex:page >
+OWD : Organization Wide Default Settings
+-----------------------------------------
+1.OWD will specify minimum level of access that every user will get on the records of the object.
+2.There are 6 types of  OWD 's
+    a. Private 
+    b. Public Read
+    c. Public Read Write 
+    d. Public Read/Write/transfer
+    e. Public Full Access
+    f. Controlled By Parent
+---------------------  
+OWD : Private  :  
+---------------------
+1. If we define OWD as private,only owner of the record can access the record and perform
+	R|W|D|T operations on the record.
+	
+2. Users cannot see the records owned by other people .
+
+
+Example : 
+
+EID		 Owner 
+---------------
+E01		 Sam
+E02		 Ram
+E03		 Kiran
+
+Sam 	 :	E01 ---Sam   : R|W|D|T 
+
+
+Kiran	 :  E03 ---Kiran : R|W|D|T
+
+
+------------------------------------------------------------------------
+OWD : Public Read : 
+------------------------------------------------------------------------
+1. If we define OWD as Public Read ,Every user can access every record of the object.
+
+2. Records for which the given user is owner,he can perform Read ,Edit,Delete,Transfer operations
+
+3. Records for which the given user is not the owner ,he can perform only Read operation on records.
+
+
+Example  :
+
+EID		Owner 
+----------------
+E01		Sam
+E02		Ram
+E03		Kiran
+
+	Sam		: 	E01--Sam	:Read|Write|Delete|Transfer
+			:	E02--Ram	:Read	
+			:	E03--Kiran	:Read
+			
+			
+			
+	Kiran	: 	E01--Sam	: Read	
+				E02--Ram	: Read
+				E03--Kiran	: Read|Write|Delete|Transfer
+
+
+
+------------------------------------------------------------------------------------------
+OWD : Public Read Write 
+---------------------------------------------------------------------------------------
+1. if we define OWD as public Read /Write on a object ,all the users can see all the records  
+   of the object.
+   
+2. Records for which the given user the owner ,he can perform Read|Edit|Delete|Transfer operations 
+   on them .
+  
+3. Records for which the current user is not the owner ,on those records he can only perform 
+   Read|Edit operations .
+
+
+Example  :
+
+EID		Owner 
+----------------
+E01		Sam
+E02		Ram
+E03		Kiran
+
+	Sam		: 	E01--Sam	:Read|Write|Delete|Transfer
+			:	E02--Ram	:Read|Write	
+			:	E03--Kiran	:Read|Write 
+			
+			
+			
+	Kiran	: 	E01--Sam	: Read |Write	
+				E02--Ram	: Read |Write 
+				E03--Kiran	: Read|Write|Delete|Transfer 
+				
+				
+-----------------------------------------------------------------------------------
+Public Read Write Transfer 
+-----------------------------------------------------------------------------------
+1. OWD public ReadWriteTranfer is available only for Lead and Case objects.
+
+2. If you define OWD as Public Read /Write /Transfer on Lead or Case object , All the users 
+   can access all the leads/case object .
+   
+3. If the given user is the owner of the record ,he can perform Read,Write,Delete/Transfer 
+   operations.
+   
+4. If the given user is not the owner of the record ,he can perform Read,Write,Transfer 
+   operations on the records.
+
+Example  :
+
+Leadid		Owner 
+----------------
+E01			Sam
+E02			Ram
+E03			Kiran
+
+	Sam		: 	E01--Sam	:Read|Write|Delete|Transfer
+			:	E02--Ram	:Read|Write|Transfer	
+			:	E03--Kiran	:Read|Write|Transfer
+			
+			
+			
+	Kiran	: 	E01--Sam	: Read|Write|Transfer	
+				E02--Ram	: Read |Write|Transfer
+				E03--Kiran	: Read|Write|Delete|Transfer
+
+
+-------------------------------------------------------------------------------
+Public Full Access :
+-------------------------------------------------------------------------------
+1. OWD of Public Full Access available only for campaign object.
+
+2. If we give OWD as Public FullAccess on Campaign object ,all the users can 
+   perform Read|Write|Delete|Transfer on all the records.
+
+CampaignId		Owner 
+-----------------------
+E01				Sam
+E02				Ram
+E03				Kiran
+
+	Sam		: 	E01--Sam	:Read|Write|Delete|Transfer
+			:	E02--Ram	:Read|Write|Transfer|Delete	
+			:	E03--Kiran	:Read|Write|Transfer|Delete
+			
+------------------------------------------------------------------------
+Controlled By Parent 
+------------------------------------------------------------------------
+1. When two objects are connected by Master-Detail Relation ,Child object will not 
+   owner field,
+ 
+2. What ever the OWD defined on the master object ,same owd is applied on child object.
+
+
+Navigation to Define OWD :
+--------------------------
+
+Setup
+|-->Adminster 
+	|-->Security Controllers 
+		|-->Sharing settings 
+			|-->Edit 
+
+
+
+------------------------------------------------------------------------------
+Grant Access Using Hierarchies
+------------------------------------------------------------------------------
+
+1. If we enable this options on a object.All the users who are standing above you
+   in Role hierarchies can access all the records  that are accessiable to you.
+   and can perform Read/Write/Delete/Transfer operations.
+   
+   
+2. By default this option is enabled on all the standard objects and we cannot disable it.
+
+3. On Custom objects we can enable or disable based on our choices .
+
+--------------------------------------------------------------------------------
+View All access on Object for a profile 
+----------------------------------------------------------------------------------
+
+1. if we enable this option for a profile ,All the users with this profile can 
+   can access all the records of this object irrespective of OWD .
+   
+2. All the users of this profile can perform read operation on all the records 
+   of the object
+
+-------------------------------------------------------------------------------
+Modify All access on object for a Profile 
+-------------------------------------------------------------------------------
+
+1. if we enable this option for a profile ,All the users with this profile can 
+   can access all the records of this object irrespective of OWD .
+   
+2. All the users of this profile can perform read|write|Delete|Transfer operation on all 
+   the records of the object
+
+------------------------------------------------------------------------
+Modify All Data
+------------------------------------------------------------------------
+1. If you enable this options ,all the users with this profile can access all the 
+   records of all the objects in the salesforce and can perform Read/Edit/Delete/Transfer 
+   operations on all the records of entire database.
+   
+   
+---------------------------------------------------------------------------------------  
+View All Data
+------------------------------------------------------------------------------------------
+If you enable this options ,all the users with this profile can access all the 
+   records of all the objects in the salesforce and can perform Read
+   operations on all the records of entire database.
+
+</apex:page>

@@ -1,0 +1,235 @@
+<apex:page >
+===========================================================================
+Users: 
+===========================================================================
+1. These are the licensed end users ,who can login to  applicaiton .
+
+2. Once user is created we cannot delete him ,we can only de-activate him.
+
+3. If you want to create a new user, we have to assign
+	1.License
+	2.Profile
+	3.Roles
+
+4. Steps to create a new user 
+    Classic:
+    ---------
+        Setup
+        |--->Adminster
+              |--->Manager users
+                    |--->Users
+                            |--->New user
+    
+    Lightning : 
+    	Setup
+    	|---> Adminstration
+    		  |---> User
+    				|---> Users
+    					  |---> New User
+
+	Step 1: Enter Required fields 
+
+		FirstName, LastName, username, alias name,email
+
+	Step 2: Select the  Role 
+
+	Step 3: select the license 
+
+	Step 4: select Profile 
+
+	Step 5: Save 
+
+UseCase :
+-------------------------------------------------------------------------------------------
+SNO	FirstName 	UserName	  			License		Profile			Role
+-----------------------------------------------------------------------------------------
+1.	satish		satish@batch0286.com	Salesforce	SystemAdmin		CEO  // Your name
+
+2. 	wilson		wilson@batch0286.com	salesforce	Manager Profile	Manager
+
+3. 	kavya		Kavya@batch0286.com		salesforce	Clerk Profile	Clerk
+						Platform
+
+4. 	kiran		kiran@batch0286.com		salesforce 	Field Executive	Field Executive
+						Platform	
+
+5. 	divya		divya@batch0284.com		Salesforce	HR Profile		HRManager
+						Platform	
+-----------------------------------------------------------------------------------------
+Freeze the user :
+-----------------------------------------------------------------------------------------
+	1.When we freeze the user ,user will  not be able to login to his account .
+	2.License given to user will  still remains with the user.
+
+-----------------------------------------------------------------------------------------
+De-Activate User :
+----------------------------------------------------------------------------------------
+	1. When we De-Activate the User ,User will not be able to login to his account .
+	2. License given to the user will be released back to organiztion.
+
+------------------------------------------------------------------------------------------
+Profile Level IP Ranges  Restriction:
+------------------------------------------------------------------------------------------
+1. This will specify range of IP address from which user can login to his account .
+2. This can be defined at the profile level 
+3. Navigation  : 
+    	Setup
+    	|---> Adminster 
+    		  |---> Manage Users 
+    				|---> Profiles
+    					  |---> Choose the profile 
+    							|---> IP Ranges 
+    
+    	Step 1: Specify the range of IP address 
+    	Step 2: Save 
+------------------------------------------------------------------------------------------   
+Profile Level Login Hour Restrictions:
+------------------------------------------------------------------------------------------
+1.This will specify during which hours in the calender user can login to his account.
+2.This we can controll at the profile level.
+3.Navigation : 
+    	Setup
+    	|---> Adminster
+    		  |---> Manage Users 
+    				|---> Profile
+    					  |---> Choose Profile
+    							|---> Login Hours 
+    								   |--->Edit 
+    
+      Step 1: Day wise set the Login Hours for user 
+      Step 2: save 
+ -------------------------------------------------------------------------  
+ Profile Level  Maximum Invalid Attempts 
+ ---------------------------------------------------------------------------
+ a.If want to set maximum invalid attempts for specific group of users 
+		  then  we use Profile level restriction.
+	
+ b.Navigation :
+
+		Setup
+	  	  |---Adminster
+				|---Manage Users
+						|---Profile
+								|---Profile Name 
+											|---Edit	
+						      
+		1. Choose Maximim Invalid Attempts 
+		2. Choose the lockout period 
+    
+  c. If user is locked due to maximum number of invalid attempts how admin will resolve.
+    	a. Reset the password
+    	b. Unlock the user.
+
+		
+------------------------------------------------------------------------------------------
+Business Hours  : 
+------------------------------------------------------------------------------------------
+	1.These are the days and hours during which your support team is available.
+
+	2.We can set the business hours at organization level
+
+	3. Navigation 
+
+		Setup
+		|--->Adminster
+			 |--->Company Profile
+				  |--->Business Hours 
+					   |--->Edit
+
+		Step 1: Choose the time zone
+
+		Step 2: Choose the Business Hours and  Days.
+
+	4.Usecase : 
+
+		Set the Business hours for organization :
+
+		Time zone   : IST 5:30 (Asia)
+
+		Monday	    : 8:00 AM to 6:00PM
+		TUESDAY	    : 24 Hours
+		Wen	    	: 24 Hours 
+		Thur	    : 10 AM to 10 PM
+		Fri	    	: 24 Hours
+		Sat	    	: 24 Hours 
+		Sun	    	: leave blank (Note : Blank indicates the holiday)
+	
+---------------------------------------------------------------------------------------------------
+IP Address  Network Access
+---------------------------------------------------------------------------------------------------	
+	1. Generally when we are connection to salesforce from the external interfaces ,
+       saelsforce reqeust users username,password and securityToken for granting access.
+	2. If you are connecting from a trusted network we can white list the ipaddress 
+    
+    3. If you white list the IP address we can connect to salesforce using 
+    	username and password without any further verication or authentication.
+	
+	4. Navigation :
+		Setup
+		|--->Adminster
+				|--->Security Controllers
+						|--->NetWork Access
+								|--->Set the IPAddress
+
+		
+
+Login Histroy :
+-----------------
+
+Note : Admin can track the login issues related to  the user from Login History.
+
+	Setup
+		|---Adminster
+				|---Manage Users
+						|----Login History
+
+
+
+Q:: Which permission are required to Manage the users 
+
+
+	1. Manage Roles			: This permision is to create/edit/Delete roles 
+
+	2. Manage Profiles and Permission set :This permission is to create/Edit/Delete profiles
+	
+	3. Manage Password Policies :This permission is to change the password policies
+	
+	4. Manage Login Access Policies: This permission is to controll who can login
+	
+	5. Manage IP Addresses 	: This permission is to create /Edit/Delete IP restrictions
+
+	6. ResetPasword and unlock users.: This permission is unlock the user or reset 
+										the password
+	
+	7. Manage Internal Users 		  : This permission is used to create/Edit/Delete 
+										internal user 
+	8. Manage users 				  : Both internal and external users
+	
+	9.Manage Business Hours Holidays  : Users with permission can create /edit 
+										business hours or Holidays
+
+---------------------------------------------------------------------------------------------
+Password Policies:
+--------------------------------------------------------------------------------------------
+	1. This will specify the rules of your password like 
+		a. Minimum Length of password 
+
+		b. Password format 
+
+		c. Security Question to reset you password 
+
+		d. How many old password's should be remembered .
+
+			i.e your new password cannot be your last three passwords
+
+		e. Password expiry time.
+
+	2. Navigation :For organization
+
+		Setup
+	     |---Adminster
+			 |---Security Controllers
+				 |---Password Policies
+				 
+
+</apex:page>

@@ -1,0 +1,74 @@
+<apex:page >
+    1.Global Varaible: 
+     a. Variables defined outside the scope are called global variables.
+     b. Global variables can be used with in the scope and outside the scope.
+    
+   2.Local Variables:
+     a. Variables defined inside the scope are caleld local variables.
+     b. Local variables can be used only with in the scope .
+     c. Local variables cannot be used outside the scope.
+    
+    Example :
+    	Integer age ;
+    	String name;
+    	{
+    		age=50;
+    		name='Priya';
+    		String city='Hyd';
+    		String branch='SRNagar';
+    	}
+    
+    	Local Variables : city ,branch
+    	Global Variables: age ,name
+    
+    Example : 2 
+    	String colgName='CBIT';
+    	String location='Gandipet';
+    	{
+    		String code='OUCBI004';
+    		String branch='CSE';
+    		colgName='MGIT';
+    		location='HYD';
+    	}
+    		branch='ECE'; // Error
+    	Local Variables :  code ,branch
+    	Global variables:  colgName,location
+    
+    Example :3 
+    	class Example {
+    		String name;
+    		string phone;
+    		show(){
+    			name='Satish';
+    			Integer age=33;
+    		}
+    		display(){
+    			phone='040-1111';
+    			String city='Hyd';
+    		}
+    	}
+    
+    	show : 
+    		  Local  : age 
+    		  Global : name,phone
+    
+    	display: 
+    		 Local	 :city
+    		 Global  : name ,phone,
+    
+    Example :4 
+    	 email : callMe,display
+    	 phone : callMe,display
+    	 colgName: callMe
+    	 branch  : display
+    	class Example {
+    		String email;
+    		String phone;
+    		callMe(){
+    			String colgName;
+    		}
+    		display(){
+    			String branch;
+    		}
+    	}
+</apex:page>

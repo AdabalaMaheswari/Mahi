@@ -1,0 +1,9 @@
+<apex:page controller="Schema_Example_4">
+    <apex:form id="one">
+        Fieldname : <apex:inputText value="{!searchField}" />
+        <apex:commandButton value="Fetch" action="{!search}" reRender="one" />
+        <apex:selectList size="1" rendered="{!options.size>0}">
+            <apex:selectOptions value="{!options}" />
+        </apex:selectList>
+    </apex:form>
+</apex:page>

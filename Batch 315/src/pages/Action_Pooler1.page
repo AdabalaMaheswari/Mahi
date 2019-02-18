@@ -1,0 +1,6 @@
+<apex:page controller="Action_pooler">
+    <apex:form >
+    	<apex:actionPoller action="{!callMe}" interval="5" reRender="one"/>
+        <apex:outputLabel value="{!result}" id="one" />
+    </apex:form>
+</apex:page>

@@ -1,0 +1,50 @@
+<apex:page >
+    Document :
+    ----------
+    1. It is a standard object .
+    2. We store the files ,images in this object.
+    3. There are two types of documents
+    	a. Internal Document
+    	b. Externaly Available Image
+    4. Internal Document :
+    	a. These are accessibale to only internal users.
+    	b. Content of the file is not visable directly ,we need to manually open the file.
+    
+    5. Externally Available Image :
+    	a. These document is available for internal users and external users.
+    	b. Content of this file is accessiable is visable directly.
+    
+    6. Maximum size of the file we can upload is 5MB
+    
+    Document Folder :
+    --------------------
+    1. Any document we have created will be saved to a folder.
+    2. There are two types of folders 
+    	a. MyPersonal Document Folder 
+    	b. Custom Document Folder 
+    3. Any document stored in MyPersonal Document folder cannot shared with any user and they 
+       cannot be deployed.
+    
+    4. Steps to create Folder 
+    	TabPanel
+    	|---> Click on'+' sign
+    		  |--->Documents Tab
+    			   |---> New Document Folder 
+    
+    	Step 1: Enter Folder Name
+    	Step 2: Choose the users to whom the  Folder should be visable.
+    	Step 3: Specify the type of access.
+    
+    5. Steps to Create Document : 
+    	TabPanel
+    	|---> Click on '+' sign
+    		  |---> Document Tab 
+    				|--->New Document 
+    
+    	Step 1: Enter Document Name 
+    	Step 2: Choose the Document Type
+    	Step 3: Choose the folder 
+    	Step 4: Enter keyword
+    	Step 5: Choose the file
+    	Step 6: Save it
+</apex:page>

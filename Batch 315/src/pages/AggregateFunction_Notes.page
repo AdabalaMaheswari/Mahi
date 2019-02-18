@@ -1,0 +1,38 @@
+<apex:page >
+    Count() : This will return count of no of records returned by the soql .
+    Integer count=[select count() from Account where Industry='Banking']
+    Example : 
+    1. Fetch the count of no of records whoese stagename is closed won
+    	Integer size =[select count() from Account where stagename='Closed Won'];
+    
+    count(field): If you are using aggregate functions in the soql query ,this will return the result 
+    			in the form of AggregateResult
+    
+    			: Count(fieldName): This will return count of no of records in which fieldName is entered.
+    
+    AggregateResult result=[select Name,Count(Rating)size from Account ];
+    Integer count=(Integer) result.get('size');
+    
+    Sum(fieldName) : This will return summarized value of given field.
+    Max(FieldName) : This will return maximum value of given field 
+    Min(FieldName) : This will return minimum value of given field
+    AVG(FieldName) : This will return average value of given field
+    
+<!--    
+    List<AggregateResult> agList =[select stageName,Sum(Amount)total,MAX(Amount)maxamt,MIN(Amount)minamt,AVG(Amount)avgamt  from Opportunity group by StageName];
+
+	for(AggregateResult result:agList){						for(Account a: accounts)
+    	String stage=(String)result.get('stageName');			a.name	a.get('name')
+		Decimal sum=(Decimal)result.get('total');
+		Decimal max=(Decimal)result.get('maxamt');
+		Decimal min=(Decimal)result.get('minamt');
+		Decimal avg=(Decimal)result.get('avgamt');
+		System.debug('======>>Stage:'+stage);
+		System.debug('Sum :'+sum);
+		System.debug('Max :'+max);
+		System.debug('Min :'+min);
+		System.debug('Avg :'+avg);
+	}
+-->
+   If you want to query any field ,it should be part of aggregate function or group by 
+</apex:page>

@@ -1,0 +1,7 @@
+<apex:page controller="Schema_Example_5">
+    <apex:form id="one">
+       <apex:dataTable value="{!objectNames}" var="a">
+           <apex:column value="{!a}" />
+        </apex:dataTable>
+    </apex:form>
+</apex:page>

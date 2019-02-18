@@ -1,0 +1,27 @@
+<apex:page id="page" >
+    <script>
+    function show(){
+        var name=document.getElementById('page:fm:name').value;
+        alert(name);
+    }
+    </script>
+    
+    <apex:form id="fm">
+        <apex:inputText id="name" onchange="show()" />
+    </apex:form>
+</apex:page>
+
+<!--
+<apex:page id="page">
+<script>
+    function show(){
+        var name =document.getElementById('page:fm:name').value;
+        alert(name);
+    }
+</script>
+     <apex:form id="fm">
+         <apex:inputText id="name" onchange="show()" /> 
+     </apex:form>
+</apex:page>
+                
+-->

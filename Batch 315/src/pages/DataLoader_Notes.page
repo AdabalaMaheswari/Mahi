@@ -1,0 +1,330 @@
+<apex:page >
+DataLoader : 
+------------
+	This is a ETL tool provided by salesforce to perform insert ,update,upsert,delete
+	export the  data from salesforce to external system or external system to 	salesforce
+
+1.How to download the dataloader ?
+	
+	Setup
+	 |--->Adminster
+		 |
+		 |---->DataManagement
+			   |
+			   |---->DataLoader
+					|	
+					|---->Download  dataloader for windows
+
+2.How to install dataloader ?
+		
+
+	1.select the dataloder.exe file 
+
+	2.Click on run
+	
+	3.Agree the terms
+
+	4.Give next -->next--next-->Finish
+
+	Set the ssl configuration on Internet explorer 
+
+	1. Open internet explorer 
+	2. select the tools on the right corner 
+	3. Tools 
+		|----Internet Options 
+		       |--------Select Advaned Tab
+		
+
+	a .Enable  USe TLS.1.0 
+	b. Enable  USe TLS.1.1
+	c. Enable  Use TLS.1.2
+	d. Disable USe SSL 2.0
+	e. Disable  use SSL 3.0
+
+
+3.How to login to dataloader?
+
+	ANS:  There are two ways to login to dataloader 
+
+	1.Using OAuth
+
+	2.Using password 
+
+
+	1. Using OAuth : 
+	
+		a. Choose the environment type as (Production ,sandbox )
+
+		b. Provide salesforce credential of user who want to login to dataloader
+
+		c. Verification code will be sent to email 
+
+		d. Enter the verification code and click on Allow Access
+
+
+2. Using Password 
+
+	a. Generate security token
+
+	   UserName
+		|
+		|--->Mysettings
+			|
+			|---->Personal
+				  |
+				  |---->Reset My security Token
+						|---->Reset SecurityToken
+
+	Note : Security token will be sent to registred email id of user
+
+	b.Open the dataloader and choose password format
+
+	c. UserName : salesforce username
+
+	   password : salesforcepassword+securityToken
+
+
+Q: Which standard objects are supported by dataloder ?
+
+	ANS: Lead ,Account,Contact,Opportunity,PriceBook,Product,Event,Task,user
+
+
+Q:: Which custom objects are supported ?
+
+	ANS: All the custom objects 
+
+Q:: How many records are supported by dataloader ?
+
+	ANS:5 MILLION records 
+
+Q:: How to export the data ?
+
+	1. Select Export options
+
+	2. Choose the object
+
+	3. Specify the location and extraction filename
+
+	4. Select the fields 
+
+	5. Specify filter condition
+
+	6. Click on Finish
+
+Q:: Export All : 
+
+	It will export all the records in the object including the records which are 
+	in recylebin
+
+	1. Select ExportAll
+
+	2. Select the object 
+
+	3. Select Location and file where the data need to be exported
+
+	4. choose the fields
+
+	5. If you want to apply filter conditon  choose them
+
+	6. Finish
+
+
+Q:: What is the difference between export and export all ?
+
+	1. When we export ,only the  data in the object is exported 
+
+	2. When we use export all  ,all the data in the object including the data which is deleted 
+    and value of isDeleted is true is also exported.
+
+Q: How to insert the data ?
+
+	1. Create source data in the CSV format 
+
+	2. Select insert
+
+	3. Choose the object 
+
+	4. Choose the source csv file 
+
+	5. Make a field mapping between csv field and Object fields 
+
+	6. Choose the destination folder 
+
+	7. Click on finish
+
+	Note : All the Validations rules and required fields are respected while 
+		we insert the data
+
+	Note : If there are any lookup field or master-detail field provide 
+		18 character record id  in the csv
+
+Q:: Update :
+    -------
+	1. Prepare the CSV file with data that need to be updated
+		Note : Salesforce record id is a must to udpate the record 
+
+	2. select Update in dataloader
+
+	3. Choose the object 
+
+	4. Choose the CSV File 
+
+	5. Create a mapping between csv columns and fields of object 
+
+	6. Choose the folder where success and error fiels should be generated
+
+	7. finish
+
+
+Q::Delete : 
+   ---------
+
+	1. Prepare the CSV file with data that need to be deleted
+		Note ; Salesforce record id is a must to delete the record 
+
+	2.select Update in dataloader
+
+	3. Choose the object 
+
+	4. Choose the CSV File 
+
+	5. Create a mapping between csv columns and fields of object 
+
+	6. Choose the folder where success and error fiels should be generated
+
+	7. finish
+
+
+Q:: How to perform upsert ?
+
+	1. To perform the upsert opreation we need external id  or salesforce record id
+
+	2. External id field can be any one of the text ,email,number field 
+
+	3. If any external id value is already existing  update the data 
+
+	4. If external id field is not existing  create the record
+
+	5. If duplicate external id is existing in the CSV it throws error on all the duplicates 
+
+ Steps to Upsert
+
+	1. Create source data in the CSV format 
+
+	2. Select Upsert
+
+	3. Choose the object 
+
+	4. Choose the source file 
+	
+	5. Choose the external Id field 
+
+	6. Make a field mapping between csv field and Object fields 
+
+	7. Choose the destination folder 
+
+	8 Click on finish
+
+	Note : All the Validations rules and required fields are respected while 
+		we insert the data
+
+Q:: How to perform Update and delete 
+	
+	ANS:  We have to provide salesforce record id to perfom update or delete
+
+
+Q:: How to insert null values in the field for which we have not provided values 
+
+	ANS : 	DataLoader
+			|--->Settings
+				 |--->Insert Null values
+
+Q:: What is the defualt size of dataloader ?
+
+ANS: 
+	Defualt Size : 200 records
+     	Minimum size : 1
+     	Maximum Size : 2000
+
+Q::DataLoader is syncronous or Asychronous?
+
+ANS :Asyncronous
+
+Q:: DataLoader is atomic or non -atomic
+
+ANS: Non-Atomic
+
+
+Q::How to use european Date format
+
+ANS: Enable use european date format then it accepts date in the format of dd/mm/yyyy
+
+Q:: Which time zone is applied on dataloader
+
+ANS: By defualt user who logined to the dataloder his time zone is applied 
+ Note :In case if we leave this field blank system time zone is taken
+
+Q:: Can we avoid duplicates record while inserting the data
+
+
+	Satish-123--Hyd
+	Satish-123--Hyd
+
+	When we try insert these two records using dataloder two records are 
+	created in salesforce
+
+	DataLoader cannot prevent duplicate records .
+
+Q:: Can we schedule the dataloader from commandLine 
+
+ANS :Yes 
+
+Q:: If there are any master-detail fields or lookup field how will u pass 
+   the data 
+
+	1. We need to pass 18 character Id .
+
+	2. If can use VLookup function to get RecordId
+
+Data Import Wizard :
+--------------------
+	1. Data import wizard can be used to insert ,update or upsert the data  using 
+       built in Declarative  wizard.
+	   
+	2. It will support all the Custom objects 
+	
+	3. It will support import on following standard object (Account,Contct,Lead,
+	          Solution ,Campaing Member)
+	
+	4. It can support upto 50,000 records.
+	
+	5. It can avoid duplicate records while insert .
+	
+	6. Navigation :
+		Setup	
+		  |---Adminster		
+					|---Data Manangement
+								|---Import Wizard 
+										
+										
+										
+			Step 1: Choose the object .
+			
+			Step 2: Choose the operation type  as Insert ,Update,Upsert
+			
+			Step 3: Choose the source file 
+			
+			Step 4: Map the fields 
+			
+			Step 5: Save 
+	7. It is a queue based operation.
+	
+	
+Data Export Wizard :
+
+	1. We can export the data using the export wizard .
+	
+	2. We dont have choice to choose which fields we want to export .
+	
+	3. We dont have choice to apply the filter condition.
+</apex:page>

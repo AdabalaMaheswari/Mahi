@@ -1,0 +1,52 @@
+<apex:page controller="Tab_Example">
+    <apex:form id="fm">
+    	<apex:tabPanel width="800" height="200"  value="{!selected}" switchType="server">
+        	<apex:tab label="Basic Infomation" labelWidth="200" name="basic">
+                <br/><br/>
+            	<apex:pageBlock mode="mainDetail">
+                    <apex:pageBlockButtons location="bottom" dir="RTL" >
+                        <apex:commandButton value="next" action="{!nextButton}" reRender="fm"/>
+                    </apex:pageBlockButtons>
+                	<apex:pageBlockSection columns="1">
+                    	<apex:pageBlockSectionItem >
+                            <apex:outputLabel value="Last Name" />
+                            <apex:inputText />
+                        </apex:pageBlockSectionItem>
+                        <apex:pageBlockSectionItem >
+                            <apex:outputLabel value="FirstName" />
+                            <apex:inputText />
+                        </apex:pageBlockSectionItem>
+                        <apex:pageBlockSectionItem >
+                            <apex:outputLabel value="Age" />
+                            <apex:inputText />
+                        </apex:pageBlockSectionItem>
+                    </apex:pageBlockSection>
+                </apex:pageBlock>
+            </apex:tab>
+            <apex:tab label="Communication" labelWidth="200" name="comp">
+                  <br/><br/>
+            	<apex:pageBlock mode="mainDetail">
+                    <apex:pageBlockButtons location="bottom" dir="RTL" >
+                        <apex:commandButton value="finish" action="{!finish}" reRender="fm" />
+                        <apex:commandButton value="Prev" action="{!prevButton}" reRender="fm" />
+                        
+                    </apex:pageBlockButtons>
+                	<apex:pageBlockSection columns="1">
+                    	<apex:pageBlockSectionItem >
+                            <apex:outputLabel value="City" />
+                            <apex:inputText />
+                        </apex:pageBlockSectionItem>
+                        <apex:pageBlockSectionItem >
+                            <apex:outputLabel value="Place" />
+                            <apex:inputText />
+                        </apex:pageBlockSectionItem>
+                        <apex:pageBlockSectionItem >
+                            <apex:outputLabel value="Country" />
+                            <apex:inputText />
+                        </apex:pageBlockSectionItem>
+                    </apex:pageBlockSection>
+                </apex:pageBlock>
+            </apex:tab>
+        </apex:tabPanel>
+    </apex:form>
+</apex:page>

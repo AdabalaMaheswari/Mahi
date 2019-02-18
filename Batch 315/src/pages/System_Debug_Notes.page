@@ -1,0 +1,78 @@
+<apex:page >
+    Separators :
+============
+1. ()  ---> Functional Braces 
+
+2. []  ---> Array Braces 
+
+3. {}  ---> Scope 
+
+4. ;   ---> Semi-colon
+
+5. .   ---> Period
+
+6. :   ---> colon
+
+7. ,   ---> Comma
+
+===> Basic Navigation for Code Execution
+
+	UserName
+	|---> Developer Console
+	      |--->Debug
+		   |--->Open Execute Anonymous Window
+			
+
+	Step 1: write Code 
+	Step 2: Enable Open Log
+	Step 3: Execute 
+	Step 4: Debug only
+
+log files 
+
+1. System.debug() : 
+	This will print the message on the log file.
+
+	System.debug('Testing');
+	System.debug('=======Started=====');
+	System.debug('Name :Satish Myla');
+	System.debug('Age :33');
+	System.debug(30);
+	System.debug(10000.00);
+
+	O/P : 	Testing 
+      		=====Started=====
+      		Name : Satish Myla
+      		Age  : 33
+      		30 
+      		10000.00
+
+
+
+	Example 1: 
+		   ****************************
+		   Course 	: SFDC 
+		   Institute	: Capital
+		   Faculty 	:Satish Myla
+		   *****************************
+
+		System.debug('************************');
+		System.debug('Course : SFDC');
+		System.debug('Institute:Capital');
+		System.debug('Faculty:Satish Myla');
+		System.debug('************************');
+
+
+
+	Example 2: 
+		
+		1000.00
+		Hyd
+		SRNagar
+		35
+
+		System.debug(1000.00);
+		System.debug('Hyd');
+		System.debug('SRNagar');
+		System.debug(35);
+</apex:page>

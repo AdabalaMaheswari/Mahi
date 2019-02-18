@@ -1,0 +1,176 @@
+<apex:page >
+    Lexical  :
+1. Given statement is broken in small segments ,in such a way that no 
+   segment can be re-divided
+
+2. Each segment is called lexical
+
+3. Lexical may or maynot have meaning associated with it.
+
+Example :
+
+	Hai Ravi 
+
+	H|a|i| | R|a|v|i|
+
+	Integer a=b+10;
+
+	I|n|t|e|g|e|r| |a|=|b|+| 1| 0| ;
+
+
+
+Token :
+-------
+1. Given statement is broken into small segments in such a way that every segment has meaning 
+   associated with it.
+
+2. Each segment is called token.
+
+3. Tokens are further classified into five types 
+	a. Identifiers
+	b. Constants 
+	c. Operators 
+	d. Separators 
+	e. Keywords
+Example:
+
+	Hai | Ravi | : Token
+
+	Integer| a|=|b|+|10|;		
+
+	Token		Type
+	Integer 	Keyword
+
+	a		Identifier	
+
+	=		Operator
+
+	b		Identifier
+	
+	+		Operator
+
+	10		Constant
+
+	;		Separator
+
+keywords :
+-----------
+1. These are the reserved words whose meaning is pre-defined by the compiler.
+2. Meaning of these words remain same irrespective of where we use.
+3. keywords are defined using lower case .
+
+Example : 
+class, interface,if ,else ,for ,public ,private,protected,global sharing ,with ,without 
+extends ,implements ,try ,catch,void
+
+
+Constants :
+------------
+1. These are the elements whose values cannot be altered.
+2. There are four types of constants 
+	a. Numerical constant
+	b. String Constant
+	c. Boolean Constant
+	d. Null Constant
+
+3. Numerical Constants :
+   a. Any value that is formed using digits (0-9) with or with decimal point and 
+      with or with sign of the number 
+
+	Example : 10000
+		  10000.123
+		  -123
+		  +1000.00
+
+4. String constant : 
+   a. It is a collections of characters surrounded by single quotes .
+
+	Example : 
+	'CapitalInfo'	
+	'ICICI0001'
+	'ABC0001'
+	'Satish_Myla'
+	'0102-1234'
+
+5. Boolean Constant : 
+   a. This will specify true or false 
+
+6. Null constant : 
+   a. This will specify null value.
+
+
+Identifiers:
+-------------
+1. These are the names given to a class,interface,method ,variable ,constant or package 
+   to recognize them uniquely in the programming 
+
+2. Rule for defining name 
+	a. Name can contain 
+		A-Z ,a-z
+		0-9
+		_ ( underscore)	
+		$ (Dollar)
+
+	b. Name should not start with digit 
+	c. Name should not contain white space 
+
+	Example : 
+	studentName
+	Example
+	age 
+	empName
+	salary
+	a1
+	Emp_1_2
+	Emp_2_Data
+
+	Student Name 	---Error  : Blank space is not allowed
+	2age		---Error  : start with digit
+	emp*234		---SpecialSymbol *
+	invoice_Details_#--Special Symbol #
+
+	
+Upper Camel : 
+--------------
+1. In this naming convension every word first letter should be capital 
+2. This naming convention is used to define names for classes ,interface 
+
+	Employee_Data
+	Invoice_Details
+	Customer_Invoice
+
+Lower Camel
+-------------
+1. In this naming convension every first word first letter should be small.
+2. Remaing words first letter should be capital.
+3. This naming convension is used to define names for variables and methods.
+
+	Example :
+	empName
+	customerSalary
+	setData
+	getData
+	invoke
+	productInfoDetails
+	
+Upper Case
+-----------
+1. In This naming convension every word every letter should be capital.
+2. This naming convension is used for constants 
+
+	Example : 
+	MAX_Salary
+	MIN_VALUE
+	DML_EXCEPTION 
+
+Lower case : 
+-------------
+1. In this naming convention every word every letter should be small.
+2. This is used  to define names for  packages and keywords
+
+	Example :
+	 class 
+	 with
+	 if 
+	 mydata
+</apex:page>

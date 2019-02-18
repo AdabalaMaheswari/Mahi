@@ -1,0 +1,239 @@
+<apex:page >
+    IF_ELSE:
+    =========
+    stmt1;
+    stmt2;
+    stmt3;
+    stmt4;
+    
+    o/p: 1,2,3,4
+ Example :    
+    stmt1;
+    stmt2;
+    stmt3;
+    stmt4;
+    if(condition){			Conditon : true  :1,2,3,4,5,6,7,11,12
+    	stmt5;				Condition: false : 1,2,3,4,8,9,10,11,12			
+    	stmt6;
+    	stmt7;
+    }else{
+    	stmt8;
+    	stmt9;
+    	stmt10;
+    }
+    stmt11;
+    stmt12;
+    
+    Example :2 
+    stmt1;
+    stmt2;
+    if(condition1){		cond1 :true ,cond2: true : 1,2,3,4,7,8,9,10,13,14
+    	stmt3;			Cond1 :true ,cond2: false: 1,2,3,4,,7,8,11,12,13,14
+    	stmt4;			Cond1: false ,cond2: true: 1,2,5,6,7,8,9,10,13,14
+    }else{				cond1: false, cond2: false: 1,2,5,6,7,8,11,12,13,14
+    	stmt5;
+    	stmt6;
+    }
+    stmt7;
+    stmt8;
+    if(condition2){
+    	stmt9;
+    	stmt10;
+    }else{
+    	stmt11;
+    	stmt12;
+    }
+    stmt13;
+    stmt14;
+    UseCase :1
+    1. What is the bookName 
+    2. SFDC Admin
+    3. what is the price 
+    4. 5000.00
+    5. How many books you want 
+    6. 10 books
+    7. Any discount :
+    	total is more than 5000 then 20% discount 
+    	total is less than or equals to 5000 then 10% discount 
+    
+    8. How much i have to pay
+    	total -discount
+ 		Data :  bookName		SFDC Admin	: String 	
+    			price			5000.00		: Decimal
+    			no_of_Books		10			: Integer 
+    	 		total			Calcualted  : no_of_Books*price;
+    			discount		calculated  : if total > 5000
+    											total*0.20
+    									   	   else 
+    											total*0.10
+    
+    	String bookName;
+    	Decimal price;
+    	Decimal total;
+    	Decimal discount;
+    	Integer no_of_Books;
+    	bookName='SFDC Admin';			
+    	price=5000.00;
+    	no_of_Books=10;
+    	total=price*no_of_Books;
+    	if( total > 5000){
+    		discount =total*0.20;
+    	}else{
+    		discount =total*0.10;
+    	}
+    	total=total-discount;
+    
+    Example :2 
+    	1. What is your name 
+    	2. Satish Myla
+    	3. In which industry you are working 
+    	4. Banking 
+    	5. How many years of exp you have 
+    	6. 6 years 
+    	7. You belongs to which city 
+    	8. Hyd 
+    	9. If you are from Hyd with exp more than 6 years in Banking industry 
+    		then salary is 80k and bonus is 8k
+    		otherwise 
+    		salary is 50k and bonus is 5k
+    	Data:
+    	name		:Satish Myla	: String 
+    	industry	:Banking		: String 	
+    	exp			:6				: Integer 
+    	salary		: Caculated		:	
+    									if exp > 6 and industry is Banking and city hyd
+    										salary =80000;			
+    										bonus=8000.00
+    									 else 
+    										salary=50000;
+    										bonus=5000.00
+    	bonus		: 5000.00		: Decimal
+    	city		: Hyd			: String 
+   <!-- 	
+    String name;
+    String city;
+    String industry;
+    Decimal bonus;
+    Integer salary;
+    Integer exp;
+    name='Satish Myla';
+    city='Ban';
+    industry='Banking';
+    exp=9;
+    if( city =='Hyd' && industry=='Banking' && exp > 6){
+    	salary=80000;
+		bonus=8000;
+    }else{
+		salary=50000;
+		bonus=5000;
+	}
+	-->
+    
+    Example : 3 
+    if industrty is Banking then set rating as hot else set rating as warm
+    	if( industry =='Banking'){
+    		rating='Hot';
+    	}else{
+    		rating='Warm';
+    	}
+    
+    Example :4 
+    if origin is Email then set priority as High and rating as Warm 
+    if origin is other then Email then set priority as Normal and rating as cold
+    if( origin =='Email'){
+    		priority='High';
+    		rating='Warm';
+    }else{
+    	   priority='Normal';
+    	   rating='cold';
+    }
+    
+    Exaample :5 
+    if stagename is closed won the set closeDate as today and amount as 50k and type as 
+    	new customer
+    
+    if stagename is not closed won then set closeDate as 15 days from today and 
+    	amount as 80k aand type as existing 
+    
+    	if(stageName =='Closed Won'){
+    		closeDate=System.today();
+    		type='New Customer';
+    		amount=50000;
+    	}else{
+    		closeDate=System.today()+15;
+    		type='Existing';
+    		amount=80000;
+    	}
+    		= : assign the value 
+    		== : compare the value 
+    		name ='satish'; // satish is assigned to name 
+    		name =='Satish' : comparing name value is satish or not 
+    
+ =======================================================
+ if : 
+ stmt 1;
+ stmt 2;
+ if(condition){		Condition : true  :1,2,3,4,5,6
+ 	stmt3;			Condition : false : 1,2,5,6
+    stmt4;
+ }
+ stmt5;
+ stmt6;
+    
+Example : 
+1.Name of the company
+2.Wipro
+3. How many years of exp 
+4. 7.5 
+5. Salay is 50k
+6. if your city is Hyd  then salary is  salary+10000 bonus
+7. Print salary
+name 		: wipro					String 
+
+exp			: 7.5 					Decimal
+
+city		: Hyd,Ban				String
+
+Salary		:  50000,6000    		Integer 
+    
+String name;
+Decimal exp;
+String city;
+Integer salary;
+name='Wipro';
+exp=7.5;
+city='Ban';
+salary=50000;
+if(city =='Hyd'){
+	salary=salary+10000;  
+    System.debug(salary);
+}
+
+Example 2: 
+closeDate is today
+stageName is closedwon
+amount is 100000
+if stagename is closedwon then 
+    	rating is hot 
+    	type is new customer 
+   
+print closeDate ,stagename,amount ,rating ,type
+    
+Date closeDate;
+String stageName;
+Decimal amount;
+String rating;
+String type;
+closeDate =System.today();
+stageName='Closed Won';
+amount=100000;
+if(stageName=='Closed won'){
+	rating='Hot';
+	type='New Customer';    
+}   
+System.debug(closeDate);
+System.debug(stageName);
+System.debug(rating);
+System.debug(type);
+System.debug(amount);  
+</apex:page>

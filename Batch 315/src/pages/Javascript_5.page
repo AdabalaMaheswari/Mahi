@@ -1,0 +1,44 @@
+<apex:page controller="Java_List" id="page">
+     <apex:form id="fm">
+     <script>
+         function callMe(myId){
+            var rowId=myId.split(':');
+            var quant=document.getElementById('page:fm:pb:pbt:'+rowId[4]+':quant').value;
+            var price=document.getElementById('page:fm:pb:pbt:'+rowId[4]+':price').value;
+            console.log(quant);
+            var result=quant*price;
+            document.getElementById('page:fm:pb:pbt:'+rowId[4]+':total').value=result;
+         }
+         function show(myId){
+              var rowId=myId.split(':');
+              document.getElementById('page:fm:sec').value=rowId[4];
+         }        
+                
+     </script>
+     <apex:inputHidden id="sec" value="{!index}" />
+         <apex:pageBlock title="Product List"  id="pb">
+             <apex:pageBlockTable value="{!myList}" var="a" id="pbt">
+                 <apex:column >
+                     <apex:facet name="header"><apex:inputCheckbox /></apex:facet>
+                     <apex:inputCheckBox value="{!a.flag}" />
+                 </apex:column>
+                 <apex:column headervalue="Name">
+                     <apex:inputText value="{!a.name}" id="name" />
+                 </apex:column>
+                  <apex:column headerValue="Quantity" >
+                     <apex:inputText value="{!a.quantity}" id="quant" onchange="callMe(this.id)"/>
+                 </apex:column>
+                  <apex:column headerValue="Price">
+                     <apex:inputText value="{!a.price}" id="price"  onchange="callMe(this.id)"/>
+                 </apex:column>
+                  <apex:column headerValue="Total" >
+                     <apex:inputText value="{!a.total}" id="total" />
+                 </apex:column>
+                 <apex:column headerValue="Action">
+                     <apex:commandButton value="add" id="add" onclick="show(this.id)" action="{!add}" reRender="pbt" />
+                     <apex:commandButton value="Del" id="del" onclick="show(this.id)" action="{!removeEle}" reRender="pbt" />
+                 </apex:column>
+             </apex:pageBlockTable>
+         </apex:pageBlock>
+     </apex:form>
+</apex:page>

@@ -1,0 +1,102 @@
+<apex:page >
+    1. Creation of Salesforce Account :
+	a. URL : https://developer.salesforce.com
+
+	b. Click on Signup
+
+	c. Enter the basic details 
+		1. FirstName ,LastName
+		2. Email 		---> Valid Email -> Activation link will be sent to this email
+		3. Company Name		--> Any Thing 
+		4. Role			--> Developer
+		5. User Name		--> name@companyName.com			
+					Example : sam@wipro.com
+						  ram@abc.com
+
+		6. Register
+
+
+2. Activate the account 
+	a. Login to registered email address.		
+	b. Click on Activate account 
+	c. Set the password for the account.
+
+
+3. on Trail Account we get 
+	
+	Cloud 		:  Sales Cloud +Basic Service Cloud 
+	
+	Environment	:  Production Environment ( We can write Program also)
+
+	Edition		:  Developer Edition ---> Trail Version
+
+	Licenses	:  Salesforce  		: 2 Licenses
+			   Salesforce Platform	: 3 Licenses 
+			   Community Liceneses  : 5 Licenses 
+
+
+	Note :  On Trail version we cannot create sandboxes.
+
+4. How to login to salesforce 
+
+	Production  	: https://login.salesforce.com
+
+	Sandbox		: https://test.salesforce.com
+
+
+5. On which server your application is running 
+
+   a. In salesforce  we have four types of server instance 
+		
+	Server		Environment 
+	-----------------------------------------------------
+	1. AP 		Production	AP1,AP2,AP3.........
+
+	2. EU		Production	EU1,EU2,EU3.........
+
+	3. NA		Production	NA1,NA2,NA3.........
+
+	4. CS		Sandbox		CS1,CS2,CS3.........
+
+   b. How to know instance of your server 
+	
+	https://serverinstance.salesforce.com/pageName
+
+
+	https://ap5.salesforce.com
+
+	https://ap4.salesforce.com
+
+	htpps://na12.salesforce.com
+
+   c. How to track the performence of your server 
+
+	URL : https://trust.salesforce.com 
+
+		or 
+
+	URL : https://status.salesforce.com
+
+
+6. Which version of Salesforce you are using ??
+
+   Summer -18 
+
+  Note : Every year salesforce will release three versions 
+	 1. Winter 
+	 2. Spring 
+	 3. Summer 
+
+	18 indicate the year
+
+	
+7. Salesforce applications are available in two views or Layouts 
+	
+	a. Classic 
+	b. Lightning 
+
+
+UserName : admin@315.com
+Password : salesforce123
+URL  	 : https://login.salesforce.com
+</apex:page>

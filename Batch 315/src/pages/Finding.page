@@ -1,0 +1,202 @@
+<apex:page >
+    <!--
+Email_Attachment_Example ef=new Email_Attachment_Example();
+
+
+Student obj=new Student();
+System.debug('Name is'+ obj.name);
+System.debug('Phone Number is'+ obj.phone);
+System.debug('City is'+ obj.city);
+
+======================================
+Student obj1=new Student();
+System.debug('Name is'+ obj1.name);
+System.debug('Phone Number is'+ obj1.phone);
+System.debug('City is'+ obj1.city); 
+=======================================
+ProductInfo obj=new ProductInfo();
+obj.Show();
+====================================
+Product_Info pi=new Product_Info();
+pi.calculate();
+=====================================  
+Example e1=new Example();
+e1.Calculate(15000,5);
+e1.Display();
+
+e1.Calculate(18000,4);
+e1.Display();
+
+e1.Calculate(195000,5);
+e1.Display();
+
+e1.Calculate(26000,4);
+e1.Display();
+===================================
+College c1=new College();
+c1.setData(55000,7500);
+c1.Display();
+====================================
+Student_Date obj=new Student_Date('Md Azeem','8184950055');
+//System.debug('Student name is'+stuName);
+//System.debug('Student Phone is'+stuPhone);
+//System.debug('College Name is'+college);
+//System.debug('Branch is'+branch);
+===========================================    
+Student_Date st1=new Student_Date('Mahi','8184920000');
+ =========================================   
+Employee1 e1=new Employee1('myla','Satish',6);
+//e1.Display();  
+==========================
+
+Employee1 obj=new Employee1('Myla','Satish',7) ;   
+obj.setData();
+    
+------------------------------------------
+Static_Example st = new Static_Example();
+st.add();
+Static_Example.call();
+st.call();
+=================================
+
+    
+College_1 c1=new College_1(); 
+System.debug(c1.name);
+System.debug(c1.age);
+System.debug(c1.phone);
+System.debug(c1.colgName);
+System.debug(c1.city);
+-----------------------------------------    
+Child_Example c1=new Child_Example();
+//c1.callMe();
+c1.invoke();
+-----------------------------------------
+List<String> cityNames=new List<String>();
+String a='wipro';
+cityNames.add(a);
+System.Debug(a);
+String b='TCS';
+cityNames.add(b);
+System.Debug(b);
+String c='CSS';
+cityNames.add(c);
+System.Debug(c);
+String d='Capital';
+cityNames.add(d);
+System.Debug(d);
+String e='Testing';
+cityNames.add(e);
+System.Debug(e);
+-----------------------------------------
+List<Account> accounts=new List<Account>();
+Account a1=new Account();
+a1.Name='Wipro';
+a1.Rating='Hot';
+a1.Industry='Energy';
+accounts.add(a1);
+System.debug(a1.Name);
+System.Debug(a1.Industry);
+System.Debug(a1.Rating);
+--------------------------------------
+List<Contact> contacts=new List<Contact>();
+Contact c=new Contact();
+c.LastName='Myla';
+c.FirstName='Satish';
+c.Phone='040-12345';
+contacts.add(c);
+System.Debug('Last Name :'+c.LastName);
+System.Debug('First Name :'+c.FirstName);
+System.Debug('Phone :'+c.Phone);
+---------------------------------------
+List<Integer> ages =new List<Integer>{10,20,30,40};
+			List<Integer> myList =ages.clone();
+			System.debug('Ages:'+ages);
+			System.debug('MyList:'+myList);
+			ages.add(90);
+			ages.add(80);
+			myList.add(66);
+			myList.add(77);
+			System.debug('Ages:'+ages);
+			System.debug('MyList:'+myList);
+------------------------------------------
+    
+    List<Lead> leads=[select Id, LastName, FirstName from Lead where CreatedBy=YESTERDAY]
+			List<Integer> ages =new List<Integer>();
+		 	ages.add(10);
+		 	ages.add(20);
+	     	ages.add(30);
+		 	ages.add(40);
+============================================
+Contact thisContact = new Contact( Firstname='Brian', 
+                                  Lastname='Dent', 
+                                  Phone='(619)852-4569',
+                                  Department='Mission Control',
+                                  Title='Mission Specialist - Neptune',
+                                  Email='briandent@trailhead.com');
+
+insert thisContact;
+System.debug('Firstname');
+System.Debug('Lastname');
+System.debug('Phone');
+System.debug('Department');
+======================================
+List<List<sObject>> searchList = [FIND 'Mission Control' IN ALL FIELDS 
+                                  RETURNING Contact(FirstName, LastName,
+                                  Phone, Email, Description)];
+Contact[] searchContacts = (Contact[])searchList[0];
+System.debug('Found the following contacts:');
+for (Contact c : searchContacts) {
+   System.debug('"'+c.LastName + ', ' + c.FirstName+'"');
+}
+
+----------------------------------
+      List<Lead> leads=[select Id, LastName, FirstName from Lead where CreatedBy=YESTERDAY];
+
+
+
+
+
+
+
+List<AggregateResult> aggList=[select StageName, SUM(Amount)total, MAX(Amount)maxamt, MIN(Amount)minamt, AVG(Amount)avgamt
+                                   from Opportunity Group by StageName ];
+
+	for(AggregateResult result:aggList){
+    	String stage=(String)result.get('StageName');
+        Decimal total=(Decimal)result.get('total');
+        Decimal max=(Decimal)result.get('maxamt');
+        Decimal min=(Decimal)result.get('minamt');
+        Decimal avg=(Decimal)result.get('avgamt');
+        
+        System.debug('=====>>Stage:'+stage);
+        System.debug('Sum ='+total);
+        System.debug('Max='+max);
+        System.debug('Min='+min);
+        System.debug('Ave='+avg);
+	}
+Lead_Queue_EXample qe=new Lead_Queue_EXample();
+Id jobId=System.enqueueJob(qe);
+
+BatchApex_Example be=new BatchApex_Example();
+Id jobId=Database.executeBatch(be,5);
+
+Governing_Example g=new Governing_Example();
+g.callDML();
+
+
+Batch_Example_3 be=new Batch_Example_3();
+Id jobId=Database.executeBatch(be,5);
+
+Schedule_Example_2 se=new Schedule_Example_2();
+string cron='0 30 5 15 * ?';
+Id jobId=System.Schedulable('MyTest',cron,se);
+
+Schedule_Example_2 sa=new Schedule_Example_2();
+string cron='0 30 5 15 * ?';
+Id jobId=System.schedule('MyTest', cron, sa);
+
+Email_Attachment_Example em=new Email_Attachment_Example();
+
+
+-->
+</apex:page>

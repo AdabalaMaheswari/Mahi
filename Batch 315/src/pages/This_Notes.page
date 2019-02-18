@@ -1,0 +1,31 @@
+<apex:page >
+    this:
+    ------
+    1. this is a keyword .
+    2. this is used to reffer to instance of object ,when there is conflict between 
+       local vairable and object variable.
+    
+    3. Example : 
+    	public class This_Example {
+			public String empName ;
+    		public String city;
+    		public String branch;
+    		public This_Example(String name,String city,String branch){
+        		empName=name;
+        		city=city;
+        		this.branch=branch;  
+    		}
+    		public void show(){
+        		System.debug(empName);
+        		System.debug(city);
+        		System.debug(branch);
+    		}
+		}
+    	Example : 
+    	Execute : Open Execute Anonymous Window 
+    			  This_Example te =new This_Example('Sam','Hyd','SRNagar');
+    			  te.show();
+    	O/P :  Sam
+    		   null
+    		   SRNagar
+</apex:page>

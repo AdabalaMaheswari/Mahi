@@ -1,0 +1,97 @@
+<apex:page >
+    Cloud Computing  :
+	-------------------
+1. It is a concept of offering Infra-Structure,Platform,Software as service a on the cloud 
+   on basis of Pay-per-User model.
+
+2. Service is offered on the browser using Virtualization concept.
+
+
+IaaS: (Infra-Structure as a Service) 
+-------------------------------------
+1. It is a concept of offering Server ,Space,Networking on rental basis through internet ,
+   on the model of Pay-per-use.
+
+2. Vendors :
+	Amazon Webservice 
+	Rackspace
+	Digital Ocean
+	Google Cloud
+	Microsoft Azure
+
+PaaS : (Platform as a Service ) 
+---------------------------------
+1. It is a concept of offering Server,Space,Networking,OS,Software,Tools and Database on 
+   rental basis through internet on the model of Pay-Per-use.
+
+2. Complete environment required to build or run the application is offered as Platform as a Service
+
+3. Vendors
+	Salesforce Force.com
+	Salesforce Heroku
+	Microsoft Azure
+	OpenShift
+	Google App Engine
+
+SaaS: (Software as Service)
+--------------------------------
+1. It is a concept of accessing applications through internet on the model of 
+   pay-per-use.
+
+2. Users will be accessing application through web-browser.
+
+3. Vendors :
+	Salesforce CRM 
+	Micorsoft Dynamic
+	Oracle On Demand
+	Oracle Sales cloud
+	ZOHO
+	ServiceNow
+	Pega
+
+Cloud Application :
+----------------------
+1. Any Application which is Developed on Internet ,Hosted on Internet,Accessed from Internet 
+    is called Cloud Application 
+
+
+Products of Salesforce :
+------------------------
+1. Sales Cloud : 
+   It is a CRM application developed on the cloud to automate end to end operations of 
+      sales .
+
+2. Service Cloud :
+   It is a CRM application developed on the cloud to automate end to end operations of service 
+
+3. Marketing Cloud :
+   It is a CRM application developed on the cloud to automate end to end operations of Marketing 
+
+4. Community Cloud :
+   It is a platform build to allow customer,retailer, partners to communicate and make self-service.
+
+5. Einstein Analytics:
+   It is a platform to analyze the business data and generate advanced reports and dashboards.
+
+6. Commerce Cloud : 
+   It is a platform to build e-commerce application on the cloud.
+
+7.Financial cloud 
+   It is designed for financial applications 
+
+8. QUIP : 
+   It is designed for collabrating  project documents ,spreadSheets ,checklist at one place,
+
+9. Saleforce Platform :
+	Force.com : 
+	-----------
+	1. It is a  platform developed to build cloud based social and Enterprise applications .
+	
+	Lightning Platform
+	------------------
+	1. It is a platform developed to build single page applications,mobile and tab based applications .
+
+	Heroku
+	-------
+	1. It is a platform to develop applications using their native languages.
+</apex:page>

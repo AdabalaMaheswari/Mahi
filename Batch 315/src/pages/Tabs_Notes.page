@@ -1,0 +1,98 @@
+<apex:page >
+======================================================================================
+Tabs : 
+=======================================================================================
+	1. Tabs are interface between user and the application.
+
+	2.There are four types of tabs
+ 
+		1. Custom Object Tab 
+
+		2. Visualforce Tab 
+
+		3. Web Tab 
+
+		4.Lightning Page Tab
+
+	3.Custom Object Tab : 
+
+		a.When we click on the tab corresponding object will be opened ,
+			where we can perform Read|Edit|Delete|Create operations.
+
+		b. Steps to create a Custom object Tab ;
+			Classic : 
+    		---------
+			Setup
+			  |--->Build
+					 |--->Create 
+							|--->Tabs
+								  |--->New Custom Object Tab
+    
+    		Lightning :
+    		-----------
+    		Setup
+    		|---> Platform Tools
+    			  |---> User Interface
+    					|---> Tabs 
+
+			1.Select object
+
+			2.Choose the tab style 
+
+			3.Choose the Visability of tab to the Profile
+
+			4.Add the tabs to the application .
+
+			5.Save
+
+		Note : 
+	
+		Defualt On  : Tab is visable to all the users with given profile and tab is added on Tab panel
+		      
+	
+		Defualt off : Tab is visable to all t ,Tab ihe users with given  profiles not added to Tab panel.
+		     
+
+		Tab Hidden : Tab is not visable to all the users with given profile .
+		    
+
+	4.Web Tab : 
+
+		When we click on the web tab corresponding webpage will open.
+
+	5.Visualforce Tab:
+
+		When we click on the Visualforce tab corresponding Visualforce page will open. 
+
+	6.Lightning page Tab :
+
+		When we click on the tab corresponding lightning Application page will open.
+
+
+	Q:: Which user can create a new Tab ?
+
+	ANS :Users whoes profile has Cutomize Application permission enabled can create a tab .
+
+	Q:: What are the defualt permissions that are enabled when we add tab to the applicaiton?
+	ANS :
+		1. Global Search
+		2. Create new Shortcut
+		3. Recent Items
+
+
+	Use Case : 
+
+		1. Create a Tab for Customer  Object.
+		2. Create a Tab for Payment Object.
+		3. Create a Tab for Loan object.
+
+		4. Create a custom object 'Purchases' and create a tab for it which should be 
+		   visable for only Admin,Manager ,clerk profiles . 
+	   
+	Q:: How many tabs can be created on one object 
+	ANS : one Tab
+
+	Q:: One Tab can be added in How many applications  
+	
+	ANS : Multiple Applications
+</apex:page>

@@ -1,0 +1,191 @@
+<apex:page >
+    Visualforce: 
+    -----------------
+    1. It is frame-work used by developers to build Custom user interfaces and pages that 
+       can be hosted on Lightning Platform
+    
+    2. Visualforce consists of two elements 
+    	a. Visualforce Markup
+    	b. Visualforce controller
+    
+    3. Visualforce Markup :
+       a. These are tag based elements, using which we design the UI .
+       b. There are two types of markup 
+    		1. Visualforce Components 
+    		2. HTML ,Scripting Elements 
+       c. Visualforce Components: 
+    	  	1. These are standard components desginged by salesforce to support creation\
+    		   of UI 
+    		2. Example :
+    			apex:page ,apex:pageBlock,apex:pageBlockSection,apex:pageBlockSectionItem
+    
+    	d. HTML,Scripting Elements : 
+    		 1. Any element supported by the web browser will is also supported by the visualforce
+    		 2. Example : 
+    				HTML ,CSS ,Javascript,Ajax,Jquery,Angular,Node.js,backbone.js ,bootstrap
+    		
+    4. Visualforce Controller : 
+    	a. When user interacts with any of component of element in the page ,
+    	   operation that should be performed on the data on the server side is defined by 
+    	   visualforce controller.
+    
+    	b. There are four types controllers 
+    		1. Standard Controller 
+    		2. Standard List Controller 
+    		3. Controller 
+    		4. Extentions
+    
+    	c. Standard Controller : 
+    		1. If you want to use the same functionalities defined by salesforce on any of the object 
+    		   then we use standardController.
+    
+    	d. StandardListController:
+    		1. This is used to reffer to list of records from the given object and display 
+    
+    	e. Controller : 
+    		1. If you want to define your own custom logic then we create a apex class 
+    		   and write the logic
+    		2. Apex class we will be used as Controller.
+    
+    	f. extentions : 
+    		1. If you want to use standard Logic and some custom logics then we use the concept of extentions
+   5. Visualforce pages are used 
+    	1. Override standard buttons like new ,edit,delete ,etc....
+    	2. Override tab view Pages 
+    	3. Create a custom buttons on standard pages 
+    	4. Create a custom sidebar components 
+    	5. Creating a custom tabs 
+    	6. Adding custom ui on the detail page of the record.
+    
+    6. What permissions are required to create a VF page 
+    	a. Customize the application 
+    	b. Author Apex 
+    
+    7. In how many ways we can create a VF page ??
+    	a. Standard Navigation 
+    	b. Developer Console
+    	c. URL 
+    	4. Using IDE's (Eclipse,MavenMate....)
+    
+    8. Standard Navigation : 
+    	1.Classic : 
+    		Setup
+    		|---> Build
+    		  	  |---> Develop
+    					|---> Lightning Components
+    					  	  |---> Visualforce Page
+    
+    	2. Lightning :
+    		Setup
+    		|---> Platform Tools
+    			  |---> Custom Code
+    					|---> Lightning Components
+    						  |---> Visualforce Page
+    
+    	Step 1: Enter Page Label and name 
+    	Step 2: Write the code 
+    	Step 3: Save 
+    	Step 4: Preview
+    
+    9. Developer Console :
+    	1. Classic 
+    	   UserName
+    	   |---> Developer Console
+    			 |---> File 
+    				   |---> Visualforce Page
+    						 |--->New 
+    
+    	2. Lightnig :
+    		Setup
+    		|---> Developer console 
+    			  |--->File 
+    				   |---> Visualforce Page 
+    						 |--->New 
+    
+    10. Using URL format 
+    	 a. Enable Development Mode 
+    		 1. Classic :
+    			Setup
+    			|---> Adminster
+    				  |---> Manage Users
+    						|---> User 
+    							  |---> Select User
+    									|---> Enable Development Mode
+    
+    		 2. Lightning :
+    			Setup
+    			|---> Adminstration
+    				  |--->Users
+    					   |---> Select User
+    									|---> Enable Development Mode
+    
+    	 b. we will open VF page using 
+    			https://serverinstance.salesforce.com/apex/PageName
+    
+    		if the page is existing VF page will  open 			
+    		if the page is not existing VF page error will be generated ,click on link and create new
+    
+    11. Rules to create a VF page 
+    	a. Every element in the page should obey strict xml format 
+    	   1. Every opening element should have corresponding closing element.
+    			<!--
+
+					<Name> </Name>
+					<Name> Satish </Name>
+					<Name />
+					<Name>
+						<LastName> Myla</LastName>
+						<FirstName>Satish</FirstName>
+					</Name>
+					<college />
+    			-->
+    
+    		2. Inner elements should be closed first then outer elements
+    			<!--
+						<Name>
+							<LastName> Myla </LastName>
+							<FirstName> Satish</FirstName>
+						</Name>
+				-->
+    
+    		3. We can define properties for the elements 
+    			<!--
+					<college name="CBIT" place="GANDIPET"  />
+							 |			 |
+							 attribute 	 attribute 
+
+					<Element>
+					Body
+					</Element>
+				-->
+    
+    12. All the VF page will have an extention of ".vfp" 
+    
+    13. Frequently used vf components 
+    	1. apex:page 
+    	2. apex:sectionHeader
+    	3. apex:pageBlock
+    	4. apex:form
+    	5. apex:commandButton
+    	6. apex:commandLink
+    	7. apex:pageBlockButtons
+    	8. apex:pageBlockSection
+    	9. apex:inputField
+    	10.apex:outputField
+    	11.apex:outputLabel
+    	12.apex:inputText 
+    	13.apex:inputSecret
+    	14.apex:inputHidden
+    	15.apex:inputCheckbox
+    	16.apex:inputTextArea
+    	17.apex:pageBlockSectonItem
+    	18.selectList
+    	19.selectRadio
+    	20.selectCheckBoxes
+    	21.selectOption
+    	22.selectOptions
+    	23.apex:pageMessages 
+    	24.tabPanel
+    	25.tab
+    	26.details
+</apex:page>

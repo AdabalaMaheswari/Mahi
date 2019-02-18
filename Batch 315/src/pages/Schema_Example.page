@@ -1,0 +1,8 @@
+<apex:page >
+    Sobject : 
+    Account ,Contact, Customer__c 
+    For every sobject there is a apex class.
+    If you want to use sobject ,then we will use Corresponding apex class.
+    Account acc =new Account();
+    System.debug(acc.getSobjectType());  //Account 
+</apex:page>

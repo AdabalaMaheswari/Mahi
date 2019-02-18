@@ -1,0 +1,60 @@
+<apex:page >
+    
+   Error : abnormal behaviour of the program is called error.
+   		 : There are two types of errors 
+    		 a. compile time errors 
+    		 b. Run-time Errors
+    Compiler time Errors :
+    1. These are syntax errors 
+    2. method or variable or class missing
+    3. These are handled at the time of compiling the program
+    
+    Run-time Errors :
+    -----------------
+    1. These error occurs at the run time.
+    
+    try : 
+    statments which may raise an error are defined in the try block.
+    
+    catch : 
+    if the statements in the try block raises any error ,the mechanisum to hanle the error is 
+    defined in the catch 
+    
+    Note : Every try will have one catch
+    
+    stmt1;
+    stmt2;
+    stmt3;
+    stmt4;
+    O/P: 1,2,3,4
+    Error : 3 
+    	  :1,2,Quit
+=====================================================
+    stmt1;
+    stmt2;
+    stmt3;
+    try{
+    	stmt4;
+    	stmt5;
+    	stmt6;
+    	stmt7;
+    }catch(Exception e){
+    	stmt8;	
+    	stmt9;
+    	stmt10;
+    }
+    stmt11;
+    stmt12;
+    stmt13;
+    O/P : No Error : 1,2,3,4,5,6,7,11,12,13
+    O/P : Error    : 2  :1,Quit 
+    O/P : Error    : 6 and catch was able to handle 
+    			   : 1,2,3,4,5,8,9,10,11,12,13
+    O/P : Error    : 9
+    			   : 1,2,3,[ 4,5,6,7],8,Quit 
+    				  
+    				
+    
+    O/P :Error 	   : 12 
+    			   :1,2,3,[4,5,6,7,8,9,10],11,Quit 
+</apex:page>

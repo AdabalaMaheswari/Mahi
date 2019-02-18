@@ -1,0 +1,10 @@
+<apex:page >
+    <script>
+        var name='Satish';
+        var city='Hyd';
+        var place='Ameerpet';
+        document.write(name+'<br/>');
+        document.write(city+'<br/>');
+        document.write(place);
+    </script>
+</apex:page>

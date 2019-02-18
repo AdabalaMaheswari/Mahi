@@ -1,0 +1,59 @@
+<apex:page >
+    Constructor :
+    -------------
+    1. Constructor is a special method.
+    2. It is defined with same name of the class.
+    3. It is used to intialize the datamembers of the class 
+    4. Constructor will not have any return type.
+    5. Constructor can be called only once,i.e at the time of creating a object.
+    Syntax : 
+    		className(parameters){
+    
+    		}
+    Example : 
+    1. Create a apex class Student with a constructor 
+    	public class Student{
+    		public Student(){
+    			// Constructor
+    		}
+    	} 
+      
+    2. Create a apex class Employee with a constructor 
+    	 public class Employee{
+    		 public Employee(){
+    
+    		 }
+    	 }
+    3. Create class College with a contructor 
+    4. Create a class ProductInfo with a contructor   
+    5. Create a class Company with a constructor 
+    6. Create a class Account_Details with a contructor
+    7. Create a class Contact_Info with a constructor
+    8. Create a class Invoice_Data with a contructor	
+    9. Create a class Opty_Details with a contructor
+    10. Create a class Bank with a constructor
+    11. Create a apex class Student with name,phone,age 
+        Create a constructor  and assign the values of name,phone ,age 
+    	public class Student{
+    		String name;
+    		String phone;
+    		Integer age;
+    		public Student(){
+    			name='SatishMyla';
+    			phone='+91-8686864286';
+    			age=33;
+    		}
+    	}
+    12. Create a class Employee with lastName,firstName,exp,salary,bonus,city
+        Create a constructor and assign the values of datamembers
+		    
+    13. Create a class product Info with name,quantity,price,tax,gst
+        Create a constructor and assign the values of datamembers.
+    
+    14. Create a class Account_Details with name,industry,rating,amount 
+    	Create a constructor and assign the values of datammbers
+    
+    15. Create a class Contact_Data with lastName,phone,email,place 
+    	Create a constructor and assign the values of datamembers.
+    
+</apex:page>

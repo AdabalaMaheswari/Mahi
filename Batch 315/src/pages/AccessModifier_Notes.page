@@ -1,0 +1,23 @@
+<apex:page >
+Access Modifiers:
+------------------
+    1. They will specify the scope the members in the apex programming 
+    2. Private : 
+       a. if you define class,method or varaible as private ,they can be accessed only 
+    	  with in the class in which they are defined.
+       b. If you dont mention modifier ,by default it will be private.
+    
+    3. Public : 
+    	a. If you define class ,Method or variable as Public ,They can be accessed any where within
+    
+    	   the application .
+    	
+    4. Protected :
+       a. If you define class ,method ,or variable as protected they can be accessed with in the in which
+     	  they are defined and with in the child classes.
+    
+    5. global : 
+    	a. if you define class, method or variable as global they can be accessed with in the applicaiton
+    	   and outside the application.
+    	b. If you want to define web-services then we define class as global.
+</apex:page>

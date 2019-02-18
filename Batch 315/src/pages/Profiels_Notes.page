@@ -1,0 +1,139 @@
+<apex:page >
+    Profiles : 
+-----------
+	1.Profiles in the salesforce controlles what user can access and what 
+	  user can see in the  organization.
+
+	2.Every profile is designed for a specific license.
+
+	3.Profile Controlles  
+
+		a. Which applications user can access .
+
+		b. Which objects user can acess  .
+
+		c. Field level permissions.
+
+		d. Tab permissions
+
+		e. Record Type permissions
+
+		f. Adminstative permissions
+
+		g. User level permissions
+
+	4. There are two types of Profiles in salesforce .
+
+		a. Standard Profiles 
+
+		b. Custom Profiles
+ 
+	5.Standard Profiles : Profiles created by the salesforce to meet the global CRM requirements.
+
+		Ex : System Adminster
+
+		Ex : Salesforce Platform user
+
+	6.Custom Profiles : These are the profiles created by the users to meet  his organizational 
+      business requirement.
+
+		Note : Every custom Profile is a clone of any one of the existing profile
+
+	7.Steps to create Custom Profile :
+
+		Navigation :
+		  Classic : 
+		  Setup
+		  |--->Adminster
+			   |--->Manage Users
+			        |--->Profiles
+				         |--->New Profile
+    
+    	Lightning : 
+    	Setup
+    	|---> Adminstration
+    		  |---> Users 
+    				|--->Profile
+    					 |---> New Profile
+
+		Step 1: Choose the existing profile.
+
+		Step 2: Check the License.
+
+		Step 3: Enter the Custom Profile  Name .
+
+		Step 4: Save 
+
+		Step 5: Click on Edit Button.
+
+		Step 6: Customize the permissions
+
+		Step 7: Save
+
+	UseCase :  
+
+		1 .Create a new profile : 
+
+			License Name	: Salesforce 
+
+			Copy Exiting 	: System Adminster 
+
+			Profile Name 	: Manager Profile
+
+		2. Create a new Profile 
+
+			License Name 	: Salesforce Platform
+
+			Copy Exiting	: Salesforce Platform user 
+
+			Profile Name 	: Clerk Profile 
+
+		3.  Create a new Profile
+
+			License Name	: Salesforce Platfrom
+
+			Copy Exiting	: Salesforce Platform user 
+
+			Profile Name	: Field Executive Profile
+	
+		4. Create a new Profile	
+
+			License Name 	: Salesforce Platform
+
+			Copy Exiting	: Salesforce Platform user 
+
+			Profile Name 	: HR Manager Profile 
+	
+		5. Create a new Profile	: 
+
+			License Name	: Chatter Free
+
+			Copy Exiting 	: Chatter Free 
+
+			Profile Name	: Customer 
+
+
+	Q: To how many users  we can assign the same profile ?
+
+	ANS: To any  number of users
+
+	Q: If two users have same profile will they get same permissions ?
+
+	ANS: Yes 
+
+	Q::Can we delete a standard Profile ?
+	ANS : No we can not delete ,but we can customize
+
+
+	Q::Can we delete custom profile ?
+	ANS : Yes we can delete 
+
+	Q::Which users can see the setup menu
+	ANS :users whoes profile has view setup and configuation option enabled 
+
+	
+	Q:: Can we deploy the profiles from sandbox to production ?
+	
+	ANS : No
+
+</apex:page>

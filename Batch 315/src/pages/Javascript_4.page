@@ -1,0 +1,69 @@
+<apex:page id="page">
+ <script>
+     function call(){
+             document.getElementById('page:fm:pb:pbs:err1').innerHTML='';
+             document.getElementById('page:fm:pb:pbs:err2').innerHTML='';
+     }
+     function add(){
+         call();
+         var aval=document.getElementById('page:fm:pb:pbs:pbsi1:aval').value;
+         var bval=document.getElementById('page:fm:pb:pbs:pbsi2:bval').value;
+         if(aval=='' && bval=='')
+             {
+              document.getElementById('page:fm:pb:pbs:err1').innerHTML='<font style="color:green">Enter Aval</font>';
+              document.getElementById('page:fm:pb:pbs:err2').innerHTML='<font style="color:green">Enter Bval</font>';
+
+             }else  if(aval!='' && bval!=''){         
+              var result=parseInt(aval)+parseInt(bval);
+             document.getElementById('page:fm:pb:pbs:pbsi3:result').value=result;
+         }else if(aval==''){
+             document.getElementById('page:fm:pb:pbs:err1').innerHTML='<font style="color:green">Enter Aval</font>';
+         }else if(bval==''){
+             document.getElementById('page:fm:pb:pbs:err2').innerHTML='<font style="color:green">Enter Bval</font>';
+         }
+     }
+     function mul(){
+         call();
+         var aval=document.getElementById('page:fm:pb:pbs:pbsi1:aval').value;
+         var bval=document.getElementById('page:fm:pb:pbs:pbsi2:bval').value;
+         if(aval=='' && bval=='')
+             {
+              document.getElementById('page:fm:pb:pbs:err1').innerHTML='<font style="color:green">Enter A val</font>';
+              document.getElementById('page:fm:pb:pbs:err2').innerHTML='<font style="color:green">Enter B val</font>';
+
+             }else  if(aval!='' && bval!=''){   
+                 var result=parseInt(aval)*parseInt(bval);
+             document.getElementById('page:fm:pb:pbs:pbsi3:result').value=result;
+         }else if(aval==''){
+             document.getElementById('page:fm:pb:pbs:err1').innerHTML='<font style="color:red">Enter A val</font>';
+         }else if(bval==''){
+             document.getElementById('page:fm:pb:pbs:err2').innerHTML='<font style="color:red">Enter B  val</font>';
+         }
+         
+     }
+ </script>
+   <apex:form id="fm">
+       <apex:pageBlock title="Account" id="pb">
+           <apex:pageBlockButtons location="top">
+               <apex:commandButton value="Add" oncomplete="add()" />
+               <apex:commandButton value="Mul" oncomplete="mul()" />
+           </apex:pageBlockButtons>
+           <apex:pageBlockSection id="pbs">
+               <apex:pageBlockSectionItem id="pbsi1">
+                   <apex:outputLabel value="Enter A Val" />
+                   <apex:inputText id="aval" />
+               </apex:pageBlockSectionItem>
+               <apex:outputLabel id="err1" />
+               <apex:pageBlockSectionItem id="pbsi2">
+                   <apex:outputLabel value="Enter B Val" />
+                   <apex:inputText id="bval" />
+               </apex:pageBlockSectionItem>
+               <apex:outputLabel id="err2" />
+               <apex:pageBlockSectionItem id="pbsi3">
+                   <apex:outputLabel value="Result" />
+                   <apex:inputText id="result" />
+               </apex:pageBlockSectionItem>
+           </apex:pageBlockSection>
+       </apex:pageBlock>
+   </apex:form>
+</apex:page>

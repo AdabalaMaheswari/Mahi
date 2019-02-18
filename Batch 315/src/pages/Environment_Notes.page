@@ -1,0 +1,91 @@
+<apex:page >
+    Environment :
+-------------
+1. Environment is  nothing but instance of a force.com.
+
+2. Environment is classified into three types 
+	a. Production
+	b. Developer Environment 
+	c. Testing Environment.
+
+3. Production Environment :
+
+   a. This is the environment where live data is stored or data required to perform the 	
+      business logic is stored.
+
+4. Developer Environment : 
+   a. This is the environment where developers will work to enhance or Customize the application 
+      without effecting production environment.
+
+5. Testing Environment :
+    a. This is the environemnt where testers will test the applicaiton without effecting the production.
+
+6. Metadata : 
+   a. Complete application along with code and configuration is called metadata,	
+   b. We can only say entire live application without data is metadata.
+
+7. Sandbox :
+   a. It is a instance of force.com
+   b. This is a identical copy of prodution metadata or Metadata and Data.
+   c. This environment is used for Development,Testing ,Training activities
+   d. Sandboxes are classified into four types 
+	1. Developer Sandbox
+	2. Developer Pro Sandbox 
+	3. Partial Copy sandbox 
+	4. Full Sandbox
+
+8. Deployment: 
+   a. it is a Process of Migrating metadata changes from one environment to another environment 
+
+9. Refresh : 
+   a. It will remove old copy of production from your sandbox and given fresh copy of production.
+
+
+10. Developer Sandbox : 
+    a. It is a instance of force.com
+    b. It is a identical copy of production metadata .
+    c. No Live data from production will be given.
+    d. It is designed for development activities by individual developer.
+    e. Data Size 	: 200 MB
+    f. File Size	: 200 MB
+    g. Refresh Interval	: 1 time in a day
+    h. Activities 	: Development and Testing by individual developer.
+
+
+11. Developer Pro Sandbox : 
+    a. It is a instance of force.com
+    b. It is identical copy of production metadata.
+    c. It is simillar to Developer sandbox .
+    d. It is designed for Development activities by group of developer.
+    e. Data Size	: 1 GB 
+    f. File Size	: 1 GB 
+    g. Refresh Interval	: 1 time in a day
+    h. Activities	: Development ,Testing,Integration Testing ...
+
+12. Partial Copy Sandbox :
+    a. It is a instance of a force.com
+    b. It is a identical copy of production metadata and data .
+    c. It is designed for testing activities .
+    d. Data Size     	: 5 GB 
+    e. File Size     	: 5 GB 
+    f. Refresh Interval	: 1 time in every 5 days
+    g. Action		: All types of Testing except load testing and performence testing 
+    h. This environemnt is also called UAT (User Acceptence Testing ) Environment.
+    i. This will give sample data of 10,000 rcords per object.
+
+13. Full Sandbox   : 
+    a. It is a instance of force.com
+    b. It is exact copy of production metadata and data
+    c. Complete data from production is copied.
+    d. This sandbox is designed for testing activities.
+    e. Data size	: Production Size
+    f. File Size	: Production Size
+    g. Refresh Interval	: 1 time 29 days 
+    h. Action		: All types of testing including Load and Performence Testing.
+    i. This is also called Staging Environment.
+
+
+14. Sandboxes are created from Production Environment.
+
+15. Sandboxes are reffreshed from Produciton Environment.
+</apex:page>

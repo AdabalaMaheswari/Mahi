@@ -1,0 +1,12 @@
+<apex:page >
+    <apex:sectionHeader title="Customer" subtitle="New Employee" help="/apex/Page_Notes" description="This is Command Button Program" />
+    <apex:form id="fm">
+    	<apex:commandButton />
+        <apex:commandButton value="Submit" />
+        <apex:commandButton value="MyButton" disabled="false" />
+        <apex:commandButton value="CallMe" action="/apex/Page_Notes" />
+        <apex:commandButton value="HideMe" action="/apex/SectionHeader" rendered="false" />
+        <apex:commandButton value="MyStyle" style="background:yellow;width:200px;height:50px;color:red;" />
+        <apex:commandButton value="Reload" reRender="fm" />
+    </apex:form>
+</apex:page>

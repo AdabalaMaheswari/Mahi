@@ -1,0 +1,44 @@
+<apex:page >
+Object Level Access : 
+---------------------
+1. Permissions on the object are controlled at profile level.
+
+2. Profile of the users controlles Create,Read,Edit,Delete permission on a object .
+
+3. If you want to grant any extra set of permissions to a specific user on a object 
+   apart from permissions what user is getting through profile ,then we use permissionset.
+   
+4.Steps to create Permission set  :
+ 
+ 
+ Setup
+ |-->Adminster
+     |--->Manage Users 
+		  |--->PermissionSet 
+			  |--->New Permission Set 
+							
+							
+	Step 1: Enter Permissionset Name .
+	
+	Step 2: Choose the license 
+	
+	Step 3: Choose the permissions 
+	
+	Step 4: Save.
+
+5. Step to assign permissionset to a specific user .
+
+	Setup
+	 |----Adminster	
+				|---Manage Users 
+							|---Users
+									|---Choose the user
+												
+												
+	Step 1: Select PermissionSet Assignment RelatedList
+	
+	Step 2: Choose the permission set
+	
+	Step 3: Save
+
+</apex:page>

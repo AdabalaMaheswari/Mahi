@@ -1,0 +1,28 @@
+<apex:page >
+    Company Profile:
+    ----------------
+    1. This will specify basic details about your organization.
+        like Company Information ,communication details,edition,licenses ,Business Hourse ,Language Settings etc..
+    
+    2. Company Information : 
+    	a. This will specify complete information about your organization .
+    		Name,Primary Contact,Communication Address, Edition,License ,API calls ,Organization Id....
+    
+    	b. Setup
+    	   |---> Adminster 
+    			 |---> Company Profile
+    				   |---> Company Information
+    						 |--->Edit 
+    
+    		1. Set Primary Contact ,	
+    		2. Choose the Default Language 
+    		3. Choose the Default Time Zone 
+    		4. Choose Corporate Currency : 
+    			Curreny format what your organization follows is called corporate currency
+    
+    		5.Organization Id : 
+    		   For every salesforce instance ,salesforce will assign 15 character unique Id based on 
+    		   which salesforce will recordnize your org
+    
+    		6. This will give you basic information about no of license purchased and used.
+</apex:page>

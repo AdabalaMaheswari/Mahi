@@ -1,0 +1,80 @@
+<apex:page >
+Roles : 
+--------
+	1. Roles in the salesforce tells, level of access on the data to the users in the organizaiton. 
+    
+	2. It tell to whom you have to report and who reports to you.
+
+	3. Role will not give any permissions it only says about the hirerarchy.
+
+	4. Steps to create New Roles
+ 		Classic : 
+		Setup
+		|--->Adminster
+			 |--->Manager Users
+				  |--->Roles
+					   |--->Add Roles
+    
+    	Lightning :
+    	Setup
+        |--->Adminstration
+            |---> Users 
+                |--->Role 
+                    |--->Add Role 
+
+
+		Step 1: Enter Role Name.
+
+		Step 2: Select Reports to Role 
+   
+		Step 3: Save.
+
+	5. We can view the roles in three formats .
+
+		a. Tree view 
+
+		b. sorted List View 
+
+		c. List View .
+
+	Note: Any role which has sub-ordinate role  cannot be deleted.
+    
+	User Case : 
+
+		1. Add a new role 
+			Name     	: VP Opearions
+			Reports 	: ItSlate
+
+		2. Add a new role 
+			Name 		: Manager 
+			Reports 	: VP Operations
+
+		3. Add a new role 	
+			Name 		: HRManager
+			Reports		: VP Operations
+
+		4. Add a new role	
+			Name		: Clerk
+			Reports		: Manager
+
+		5. Add a new role	
+			Name		: Field Executive
+			Reports		: Manager
+
+		6. Delete  All the roles under CEO
+
+		7. Reassing the Roles Manager,HRManager to CEO
+
+		8. Delete VP Opertions
+		
+		
+Q:: If two users have same role will they report to same person ?
+
+ANS : May or Maynot 
+
+Q:: if two users have same role ,will they report to same role ??
+
+ANS : Yes 
+
+
+</apex:page>

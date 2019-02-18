@@ -1,0 +1,312 @@
+<apex:page >
+    Class: 
+    ---------
+    a. It is a collection and datamembers and actions wrapped under one scope.
+    b. This concept is derived from Encapsulation.
+    c. Syntax : 
+    	1				 2		3
+        |		  		 |		|
+    	global | public class ClassName{
+    		datamembers --4
+    		actions; -- 5
+    	}
+    
+    	1. AccessModifiers: 
+    	   a. Every outer class should be defined as global or public .
+    	   b. If you want to access this class outside the application then we define them as global
+    	   c. If you want to access this class with in the application only then we define them as public.
+    
+    	2. class : 
+    	   a. This is a keyword to define the scope is a class.
+    
+        3. className : 
+    	   a. It is a identifier name given to the scope ,to recognize the scope uniquely.
+    	   b. Class Name should be defined using upper camel naming convension.
+    
+    	4. dataMembers : 
+    	   a.Data is defined as datamembers using variable.
+    	   b.Variable are defined using lowerCamel naming convension
+    	
+    	5. Actions :
+    	   a.Actions are defined as functions the class.
+    	   b.Actions are defined using lowerCamel naming convension
+    
+    Example : 
+    	 public class Example{
+    		Integer age;
+    		String name;
+    		String city;
+    	}
+    
+    Example :1 
+    	Create a apex class Student with name ,age ,phone ,city, college 
+    	public class Student{
+    		String name;
+    		Integer age;
+    		String phone;
+    		String city;
+    		String college;
+    	}
+    Example : 2
+    	Create a apex class Employee with lastName,firstName,exp,salary,bonus
+    		public class Employee{
+    			String firstName;
+    			String firstName;
+    			Decimal exp;
+    			Decimal salary;
+    			Decimal bonus;
+    		}
+    Example : 3
+    	create a apex class College with name,city,state,country,university
+    		public class College{
+    			String name;
+    			String city;
+    			String state;
+    			String country;
+    			String university;
+    		}
+    Example :4 
+    	Create a apex class ProductInfo with name ,price,quantity,tax ,gst
+    		public class ProductInfo{
+    			String name;
+    			Decimal price;
+    			Integer quantity;		
+    			Decimal tax;
+    			Decimal gst;
+    		}
+    Example :5
+    	Create a apex class InvoiceData with invoiceNo ,invoiceDate,amount,discount
+    
+    Example :6
+    	Create a apex class CompanyDetails with name ,industry,annualRevenue,phone,city;
+    
+    Example : 7
+    	Create a apex class Contact_Line with lastName,firstName,phone,mobile,otherPhone
+    
+    Example :8 
+    	Create a apex class Student with name ,phone ,email  
+    	Create a method show which will display name ,phone ,email
+    	public class Student{
+    		String name;
+    		String phone;
+    		String email;
+    		public void show(){
+    			System.debug(name);
+    			System.debug(phone);
+    			System.debug(email);
+    		}
+    	}
+    
+    Example :9 
+    	Create a apex class Employee with lastName,firstName,exp,salary,bonus;
+    	Create a method calculate : this method will calcualte the salary and bonus 
+    	 if exp is more than 5 years then salary is 80k and bonus is 8k
+    	 if exp is less than or equals to 5 then salary is 50k and bonus is 5k
+    	 
+    	 public class Employee{
+    		String lastName;
+    		String firstName;
+    		Decimal exp;
+    		Decimal salary;
+    		Decimal bonus;
+    		public void calculate(){
+    			if(exp > 5 ){
+    				salary=80000;
+    				bonus=8000;
+    			}else{
+    				salary=50000;
+    				bonus=5000;
+    			}
+    		}
+    	 }
+    
+    Example : 10 
+    	1. Craete a apex class Opty_Details with  name ,stageName,closeDate ,rating 
+    	2. Create a method invoke : This will check stagename and set the value of closeDate and rating 
+    		  if stagename is closed won then closeDate is today  and rating is hot 
+    		  if stagename is not closed won then closeDate is 15 days from today and rating is warm
+    
+    	3. Create a method display which will pring  name ,stagename,closeDatem,rating
+    
+    	public class Opty_Details{					
+    		String name;						    
+    		String stageName;
+    		Date closeDate;		
+    		String rating;
+    		public void invoke(){
+    			if(stageName=='Closed Won'){
+    				closeDate =System.today();
+    				rating='Hot';
+    			}else{
+    				closeDate =System.today()+15;
+    				rating='Warm';
+    			}
+    		}
+    		public void display(){
+    			System.debug(name);
+    			System.debug(rating);
+    			System.debug(closeDate);
+    			System.debug(stageName);
+    		}
+    	}
+    
+    =====================================================================================================
+    1. Create a apex class ProductInfo with name ,quantity,price ,total,discount
+2. Create a constructor which will assign name,quantity ,price
+3. Create a method calculate which will calcualte the discount and total
+    total =quantity*price
+    if total is more than 10k then discount is 1000
+    if total is less than or equal to 10k then discount is 500
+
+==>
+
+public class ProductInfo{
+    public String name;
+    public Integer quantity;
+    public Decimal total;
+    public Decimal discount;
+    public ProductInfo(){
+        name='SFDC';
+        price=5000;
+        quantity=4;
+    }
+    public void calculate(){
+        total=price*quantity;
+        if(total > 10000){
+            discount=1000;
+        }else{
+            discount=500;
+        }
+    }
+}
+==============================================================
+ProductInfo pi =new ProductInfo();
+pi.calculate();
+System.debug(pi.total);
+System.debug(pi.discount);
+=================================================================
+1. Create a apex class with rate ,intrest as datamembers 
+2. Create a constructor which will assign the value of rate as 12
+3. Create a method calculate which will take amount and years as parameters 
+    1. This will calculate the intrest (amount*rate*years)/100
+    
+4. Create a method display which will print rate and intrest
+
+public class Example{
+    public Decimal intrest;
+    public Integer rate;
+    public Example(){
+        rate=12;
+    }
+    public void calculate(Decimal amount,Decimal years){
+        intrest =(amount*years*rate)/100;
+    }
+    public void display(){
+        System.debug(intrest);
+        System.debug(rate);
+    }
+}
+
+
+Example  e =new Example();
+e.calculate(30000,2);
+e.display();    //7200
+e.calculate(50000,5);
+e.display();
+e.calculate(10000,2);
+e.display();
+
+
+=================================================================================
+1. Create a apex class College with name,phone ,feeAmount, taxAmount, total
+2. Create a method setData which will take amount ,gst as parameters 
+    a. This will assign feeAmoun as amount 
+       This will assign taxAmount as gst 
+       calcualte the total
+
+3. Create method display and print feeAmount,total,taxAmount
+
+public class College{
+    public String name;
+    public String phone;
+    public Decimal feeAmount;
+    public Decimal taxAmount;
+    public Decimal total;
+    public void setData(Decimal amount,Decimal gst){
+        feeAmount =amount;
+        taxAmount=gst;
+        total=feeAmount+taxAmount;
+    }
+    public void display(){
+        System.debug(feeAmount);
+        System.debug(taxAmount);
+        System.debug(total);
+    }
+}
+                        null
+==>>>  
+    College cg =new College();
+    cg.setData(10000,2000); 
+    cg.display(); // 10000,2000, 12000
+    cg.setData(30000,5000);
+    cg.display();
+
+
+==> Create a apex class which will collect the data of CSE students from CBIT college 
+    name,college,branch,phone
+==> Create a constructor and assign the values using parameters.
+
+    public class Student_Data{
+        public String name;
+        public string college;
+        public String branch;
+        public String phone;
+        public Student_Data(String stdName,String stdPhone){
+            name=stdName;
+            phone=stdPhone;
+            college='CBIT';
+            branch='CSE';
+        }
+    }
+
+    Student_Data sd =new Student_Data('Kiran','040-1234');
+    
+    Student_Data s1 =new Student_Data('Ravi','030-23333');
+
+
+==> Create a method show which will take lastname and firstname as parameters and 
+    return name 
+    public String show(String lastName,String firstName){
+        String name=lastName+firstName;
+        return name;
+    }
+    
+    ==> Invoking :  String val =show('Myla','Satish');
+
+==> Create a method invoke which will take amount ,rate ,years as parameters and return 
+    intrest
+     Decimal invoke(Decimal amount ,Decimal rate,Decimal years){
+        Decimal interest;
+        intrest =(amount*rate*years)/100;
+        return intrest;
+    }
+    ==> Invoking :  Decimal amt =obj.invoke(10000,2,3.2);
+
+==> Create a method calculate which will take exp and salary as inputparameters and return 
+    bonus 
+        if exp > 5 the bonus is 10% of salary 
+        else bonus is 5% of salary
+
+    Decimal calculate(Decimal exp ,Decimal salary){
+        Decimal bonus;
+        if(exp > 5){
+            bonus=salary*0.10;
+        }else{
+            bonus=salary*0.05;
+        }
+        return bonus;
+    }   
+ 
+    Decimal amt =obj.calcualte(3,2000);
+
+</apex:page>

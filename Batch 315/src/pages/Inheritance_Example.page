@@ -1,0 +1,57 @@
+<apex:page >
+	Inheritance:-
+    ===========
+    1. Inheritance is a Resuability Concept.
+    2. A class that extends another class inherits all the methods and properties of the extended class.
+    3. In addition, the extending class can override the existing virtual methods by using the override keyword 
+       in the method definition.
+    Syntax:-`	
+    -------
+    public Virtual class ClassName1{  //Parent Class
+    }
+
+    public class  className2 extends className2{		//Child Class
+    }
+    Example :1
+    1. Create a Student class with name ,age,phone 
+    2. Create a College class with colgName,city 
+       Create a constructot and assign the values of name,age,phone ,colgNam,city in college
+    3. Create a object for college and print 
+    
+    public virtual class Student{
+    	public String name;
+    	public String age;
+    	public String phone;
+    }
+    
+    public class College extends Student{
+    	public String colgName;
+    	public String city;
+    	public College(){
+    		name='Kiran';
+    		age=40;
+    		phone='1234';
+    		colgName='CBIT';
+    		city='Hyd';
+    	}
+    }
+    
+    Execution :
+    	College clg =new College();
+    	System.debug(clg.name);
+    	System.debug(clg.age);
+    	System.debug(clg.phone);
+    	System.debug(clg.colgName);
+    	System.debug(clg.city);
+    
+    Example :2 
+    1. Create a class Employee with name, age ,salary 
+       Create a show and assign the values  as Ravi ,50, 10000
+      
+    
+    2. Create a class Child_Class with name ,age ,salary 
+       Create a show and assign the values as Kiram,90,20000
+       Create a method callMe which will call show from parent and display parent name,age ,salary 
+       Create a method invoke which will call show method parent and display of age,name,salary
+    	
+</apex:page>

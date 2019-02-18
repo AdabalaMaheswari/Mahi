@@ -1,0 +1,16 @@
+<apex:page >
+ 
+    <apex:includeScript value="{!$Resource.scr1}" />
+    <apex:includeScript value="{!$Resource.scr2}" />
+    <script>
+    function cap()
+    {
+        alert("Next Button is Called");
+    }    
+    </script>
+    <apex:form >
+        <apex:commandButton value="Disp" onclick="disp()" />
+        <apex:commandButton value="Show" onclick="show()" />
+        <apex:commandButton value="NEXT" onclick="cap()" style="background:lightblue"/>
+    </apex:form>
+</apex:page>

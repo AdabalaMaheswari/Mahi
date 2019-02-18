@@ -1,0 +1,296 @@
+<apex:page >
+=================================================================================================
+Fields :
+=================================================================================================
+	1.Fields are nothing but the columns in the regular database.
+
+	2.There are two types of fields.
+		a. Standard Fields 
+    	b. Custom Fields 
+	
+    3.Standard Fields : 
+
+		a. These are the fields created by salesforce.
+
+		b. Values can be entered by the users or system.
+
+		c. If the System auto generates the value ,Then those fields are called system fields.
+    
+	4.System Fields :
+ 
+		a.There are the  standard fields which are created by salesforce 
+    	b. Data is also created and updated by the System
+		c. There are 7 System Fields 
+
+            1. ID	: 
+                a.Salesforce by default creates 15 Character unique Id for every record.
+    			b.This Id is case-sensitive.
+    			c.Three more charcters are added to make it case-in-sensitive Id .
+    			d.This id is also called as primary key 
+    			e.First three characters represent object.
+    		 	f.Last four characters represent record.
+              
+            2. isDeleted :
+    			a. This is boolean field.
+    			b. Value of this field is set as true,when the record was deleted.
+    			c. When a record is deleted,Record will be in the object for 15 days.		
+    			d. After 15days record will be  deleted permanently.	
+            
+            3. CreatedById
+                a. This filed will store the 18 character Id of the user who created this record . 
+    
+            4. LastModifiedById
+    
+                a. This field will store the 18 character Id of the user who lastly modified this record 
+                    
+            5. CreatedDate :
+    
+                a. This field will store date and time when the record was created .
+    
+            6. LastModifiedDate :
+    
+                a. This field will store date and time when the record was lastly modified manualy.
+            
+            7. SystemModStamp
+                a. This field will store date and time when the record was lastly modified manualy or 
+                    programatically
+
+	5. Which fields we call as  System Audit Fields ?
+
+		a.CreatedById
+
+		b.LastModifiedById
+
+		c.CreatedDate
+
+		d.LastModifiedDate
+
+		e.SystemModStamp
+
+	6: Custom Fields :
+    
+		a.These are the fields which are created by the user to meet his organizational business requirement.
+		b. Salesforce has defined  predefined datatypes to create the custom fields 
+
+		1. Text	:
+			Format	 		:  Alphanumeric
+			MaxLength		:  255 Characters
+			Single|Multiple :  Single Line
+
+		2. TextArea:
+			Format			: AlphaNumeric
+			MaxLength		: 255 Characters
+			Single|Multiple	: Multiple Line
+
+		3. TextArea(Long)   :
+			Format			: AlphaNumeric
+			MaxLength		: 1,31,072 Characters
+			Defualt			: 32,768 characters	
+			Minimum Length	: 256 Characters
+			Single|Multiple	: Multiple
+
+		4. TextArea(Rich)   :
+			Format			: Formated Data
+			Max Length		: 1,31,072 characters
+			Default Length 	: 32,768 Characters
+			Minimum Lines	: 10 Lines
+
+		5. Phone			:
+			This data type is used to store the phone numbers 
+
+		6. CheckBox 			:
+			This data types will store the value of true or false 
+
+		7. Currency			:
+			Currency values are  stored in this fields .
+			Max Length		: (Length of Integer +Length of Decimal  ) should be at 
+							  max 18 characters 
+	
+			Ex :  32000.20  ( 5+2= 7)
+	
+		8. Date				:
+		   This field will  store a particular in the calender .
+	
+		9. DateTime			:
+			This field will store the particular day and time from the calender .
+
+		10.Number 			:
+	       These fields are used to store numerical values 
+		   Max Length		:  18 characters( Length of Integer+length of Decimal)
+
+		11.Percent	: 
+		   These fields are used to store the percentage value ,by defualt '%' symbol 
+		   is appended to the data .
+		   Max Length		:  18 characters( Length of Integer+length of Decimal)
+
+		12.Email			:
+	       These field will store the email id's ,
+	       Note : Salesforce has defined validation rules to check the format of the email address.
+
+		13. PickList 	:
+			a. It is a dropdown list from which  we can select one option at a time .
+			b. Maximum we can  provide 1000 options .
+			c. Length of each option can be 255 characters 
+			d. All the options together can be 15000 characters.
+			e. We can sort options in the accending order.
+			f. We can make the first option as defualt option by enabling the field.
+			g. We can add /remove/edit /reorder the options  based on business requirement.
+	
+		14. PickList( Multi-Select)	:
+
+			a. It is also a picklist field but we can select more than one option at a time .
+			b. We  can  at max provide 150 options .
+			c .Maximum we select 100 options .
+			d. Length of each option can be at max 40 characters
+			e. All the options together can be 1500 characters.
+
+		15 .Text Encrypted  :
+			a. When we want to save the data in the encrypted format ,we use data Type TextEncrypted 
+			b. Maximum length of the field is 175 characters .
+			c. By default no one can access the data in the orginal format , 
+			d. If you want to see the data in the orginal format  ,users profile should have 
+			   view encrypted data permission enabled 
+			e. Text encrypted fields can not be used in formulas 
+			f. Encrypted fields can not be used in search Criteria or filterConditon
+			g. Encrypted fields can be used in validations ,search results, report results.
+
+
+	Q:: In How many ways we can create Custom Fields 
+	
+	Ans : Three ways 
+	
+		 a. Standard Navigation :
+			 Classic :
+				Setup	
+				|--->Build
+				     |--->Create		
+						  |--->Object		
+							   |--->Object Name
+									|--->Custom Fields and Relations 
+										 |---->New 
+    
+    			Lightning : 
+    			Setup
+    			|---> Platform Tools
+    				  |---> Object Manager
+    						|---> Choose the object
+    							  |--->Fields and Relations
+    							  	   |---> New 
+    
+																			
+				Step 1: Choose the dataType 
+				
+				Step 2: Enter field Details Like (Label,Name,Required, Unique)
+				
+				Step 3: Choose the Field Level security
+				
+				Step 4: Add the field to the default Layout .
+				
+			b. Schema Builder 
+			  Classic : 
+				Setup	
+				|---> Build
+    				  |---> Lightning Bolt
+    						|---> Schema Builder 
+    
+    		   Lightning : 
+    		 	Setup
+    			|---> Platform Tools
+    				  |---> Object and Relations
+    						|---> Schema Builder 
+    							  
+    			Step 1: Choose the Object.
+    			Step 2: Choose the datatype
+    			Step 3: Enter the field Details 
+    			Step 4: Save
+			
+			c. Force.com ShortCut Menu in classic.
+			
+				Step 1: Click on the Tab 
+				
+				Step 2: Select Force.com Menu
+				
+				Step 3: Choose view fields
+				
+				Step 4: Select Custom Fields  and Relations 
+				
+				Step 5: Select new and create the fields.
+			Note : We can also create fields using Metadata Soap api webservice	
+				
+		17. Field Dependency :
+			1.If you want to controll the values of one field by using another field then we use 
+			   field dependency.
+			2.Controlling Field :  
+				a.we can choose the any of PickList Field and Checkbox field as controlling  field.
+								
+			    b. If we choose any picklist field as controlling field ,then picklist field can have 
+				   only 300 options in it .
+			
+			3.Dependent Field :We can choose PicklIst /MultiSelect PicKList field as Dependent field.
+			
+			4. We can create multilevel dependency.
+		
+			5.Steps to create fiel dependency
+			
+				Classic : 
+    			Setup
+    			|--->Build
+    				 |--->Create
+    					  |--->Objects 
+    							|---> Fields and Relations
+    							      |---> Field Dependencies
+    
+    			Lightning : 
+    			Setup
+    			|--->Platform tools
+    				  |--->Objects and Relations 
+    					   |---> Object Manager
+    							 |--->Choose Object
+    								  |---> Fields and Relations
+    										|---> Field Dependencies
+			Step 1: Select the Controlling Field
+
+			Step 2: Choose the Dependent field 
+			
+			Step 3: Include and Execlude the dependent options for the Controlling Field.
+			
+			Step 4: Save .
+							
+	
+	UseCase : Create a Custom Object  Customer 
+		
+		    : Create Two Custom Fields 
+				
+			Field Name 	DataType		Options
+				
+			City		PickList		Hyd,Ban,Che
+				
+			Places		PickList		SRNagar,LBNagar
+										Chromepet,Thambaram
+										ECity,Marthali
+												
+			Create a field dependency.
+    
+    	18. PickList set : 
+    		if you want to add same set of options to multiple picklist fields then 
+   			we use Picklist set .
+    
+    		Classic : 
+    		Setup
+    		|--->Build
+    			 |---> Create
+    					|---> PickList value set
+    					
+    		Lightning :
+    		Setup
+    		|---> Platform Tools
+    			  |---> Objects and Relations
+    					|---> Picklist value set
+    
+    		Step 1: Enter the set name		
+    		Step 2: Enter the options 
+    		Step 3: save  
+    				
+	Note : If we create the fields using schema builder fields will not be diplayed on the ui
+    	   we need to add the fields to the pagelayout .
+</apex:page>

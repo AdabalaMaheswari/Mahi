@@ -1,0 +1,72 @@
+<apex:page >
+    Editions :
+	----------
+1. This will specify what set of features are offered by salesforce on your force.com instance.
+
+2. Editions are defined based on cloud 
+
+3. Editions for Sales +Service Clouds :
+
+	a.Salesforce Essentials :
+	--------------------------
+	  1. This ediition is designed for those organizations ,who need basic CRM application 
+	     for maximum 5 users .
+
+	  2. This edition is available for Sales Cloud and service Cloud.
+
+	b. Lightning Professional :
+	----------------------------
+	   1. This edition is designed for those organizations ,who need access to complete CRM applications
+	      for any number of users.
+		
+	   2. In this edition we dont get acess to Apex Programming 
+
+	   3. We can customize the application using Declarative Development and Visualforce.
+	
+	   4. This edition is available in sales cloud and Service cloud.
+
+	c. Lightning Enterprise  :
+	---------------------------
+	  1. This edition is designed for those organizaitons ,who need access to complete CRM application 
+	     for any number of users.
+
+	  2. On this edition you will get access to complete Force.com and Declartive Development .
+
+	  3. This is minimum edition which company has to purchase for writing apex programming
+
+	  4. This edition is available in sales cloud and Service cloud.
+
+	d. Lightning Unlimited :
+	-------------------------
+	  1. This edition is designed for those organizaitons ,who need access to complete CRM application 
+	     for any number of users.
+
+	  2. On this edition you will get access to complete Force.com and Declartive Development .
+
+	  3. On this edition we get 24/7 support and online Training 
+
+	  4. This edition is available in sales cloud and Service cloud.
+ 
+
+4. Editions will decide how many sandboxes organization will get from the salesforce 
+
+	Edition		Developer	Developer Pro		Partial Copy		Full Sandbox
+	-----------------------------------------------------------------------------------------------
+	Enterprise	25		-			1			-
+
+	Unlimited	100		5			1			1
+
+	Performence	100		5			1			1
+	(Sales+ Service + Unlimited)
+
+
+	Note : If we want  extra sandboxes we can purchase them ,except developer sandbox.
+
+	Note : Developer sandbox will come as add-on with other sandboxes.
+
+	Developer Pro ---> 5 Developer Sandboxes will be add-on
+
+	Partial Copy  ---> 10 Developer sandboxes will be add-on
+
+	Full Sandbox  ---> 15 Developer sandboxes will be add-on
+</apex:page>

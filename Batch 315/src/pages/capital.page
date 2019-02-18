@@ -1,0 +1,17 @@
+<apex:page >
+    <apex:stylesheet value="{! $Resource.s1}" />
+    <apex:includeScript value="{!$Resource.script1}"/>
+    <apex:includeScript value="{!$Resource.script2}"/>
+    <style>
+    .t
+        {
+        background:yellow;
+        }
+    </style>
+    <apex:form >
+        <apex:commandButton value="SHOW"  onclick="show()"/>
+        <input type="text" id="x" class="t" />
+        <input type="button" value="Disp" onclick="disp()"/>
+        <input type="button" value="Show" onclick="show()"/>
+    </apex:form>
+</apex:page>

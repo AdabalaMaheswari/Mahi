@@ -1,0 +1,15 @@
+<apex:page standardController="Contact" extensions="Contact_Transfer" recordSetVar="items">
+    <apex:form >
+    	<apex:pageBlock title="Contact List">
+        	<apex:pageBlockButtons location="top">
+                <apex:commandButton value="Tranfer" action="{!updateData}" />
+            </apex:pageBlockButtons>
+            <apex:pageBlockTable value="{!contacts}" var="a">
+                <apex:column value="{!a.lastname}" />
+                <apex:column value="{!a.firstname}" />
+                <apex:column value="{!a.ownerId}" />
+               
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

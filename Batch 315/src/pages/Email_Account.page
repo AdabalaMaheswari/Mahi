@@ -1,0 +1,2 @@
+<apex:page standardController="Account" extensions="Email_Account_Example" action="{!callMe}">
+</apex:page>

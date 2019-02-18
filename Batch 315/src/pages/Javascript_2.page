@@ -1,0 +1,16 @@
+<apex:page >
+    <script>
+        function show(){
+            alert('Function with out parameters');
+        }
+        function invoke(name){
+            alert('Your Name:'+name);
+        }
+        
+    </script>
+    <apex:form >
+        <apex:commandButton value="Submit" onclick="show()" />
+        <apex:commandButton value="Cancel" onclick="invoke(' Maheswari')" />
+        <apex:commandButton value="Save" onclick="invoke('{!$User.FirstName}')" />
+    </apex:form>
+</apex:page>

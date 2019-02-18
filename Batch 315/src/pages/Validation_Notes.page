@@ -1,0 +1,132 @@
+<apex:page >
+    UseCase 1 :
+    Object		: Lead 
+    Field		: Email
+    Rule		: If email is blank throw error message 
+    Message 	: Email Field cannot be blank
+   	Example :
+    		ISBLANK(Email)
+    
+    UseCase 2: 
+    Object		: Lead 
+    Field		: Lead Source : PickList (Email,Web,.....)
+    Rule		: If lead Source is Web and Phone is Blank 
+    Message		: When lead Source is Web,phone cannot be blank
+    
+    AND(cond1,cond2,cond3.......)
+    
+    Example : 
+    		AND(
+    			ISPICKVAL(LeadSource,'Web') ,
+    			ISBLANK(Phone)
+    		)
+    
+    ISNEW()  : This will return true ,if the validation rule is fired due to creation of new record.
+    
+    UseCase : 3 
+    Object		: Opportunity
+    Field		: CloseDate   :Date 
+    			: StageName	  : PickList
+    Rule		: when a new record is created ,with stagename as prospecting  
+    			  and closeDate less than today
+    
+    Message		: CloseDate cannot be less than today.
+    Example		:
+    		<!--
+    			AND(
+    				ISNEW() ,
+    				ISPICKVAL(StageName,'Prospecting'),
+    				CloseDate < TODAY()
+    			)
+			-->
+    
+    ISCHANGED(FieldName): When the given field is modified,then it will return true
+    
+    UseCase 	:4 
+    Object		: Account
+    Field		: AnnualRevenue
+    Rule		: When new value of annualRevenue is less than old value 
+    Message		: New Value should be more than old value.
+    Example		: 
+    			 AND(
+    				ISCHANGED(AnnualRevenue),
+    				PRIORVALUE(AnnualRevenue) > AnnualRevenue)
+    			 )
+   ====================================================================================================
+    1. Customer 	
+    	Field Name			DataType	
+    	-------------------------------
+    	LastName			Text
+    	FirstName			Text
+    	Phone				Phone
+    	Email				Email
+    
+    2.Create a custom Object Loan 
+    	Field			DataType		Options
+    	----------------------------------------
+    	Type			PickList		Education,Housing,Personal
+    	Security		PickList		Asserts,Salary
+    	ApplieDate		Date	
+    	AppliedAmount	Currency
+    	Salary			Currency
+    	AssertCost		Currency
+    	Customer		Lookup(Customer)
+
+	validations :
+	1. If Security is Salary and salary is null then throw error message 
+			AND(
+    			ISPICKVAL(Security__c,'Salary'),
+    			ISNULL(Salary__c)
+    		)
+	2. if security is Asserts and AssertCost is null then throw error 
+			AND(
+    			ISPICKVAL(Security__c,'Asserts'),
+    			ISNULL(AssertCost__c)
+    		)
+	3. When a new Loan is created and Customer Phone is blank throw error 
+			AND(
+    			ISNEW() ,
+    			ISBLANK(Customer__r.Phone__c)
+    		)
+	4. When a Applied Amount is modified and customer email is Blank throw error     
+  			AND(
+    			ISCHANGED(AppliedAmount__c),
+    			ISBLANK(Customer__r.Email__c)
+    		)
+    
+    Formule : 
+    1. Calcualte the processing fee for Loan 
+    		Type		Fee
+    		------------------
+    		Education	1000
+    		Personal	1500
+    		Housing		3000
+    		none		0
+    
+    	CASE( Type__c,
+    		'Education',1000,
+    		'Personal',1500,
+    		'Housing',3000,
+    		 0
+    	 )
+    
+    2. Calculate the sanctioned Amount 
+    	
+    	Type		Amount
+    	-------------------------
+    	Education	60% of applied Amount
+    	Housing 	80% of applied amount
+    	Personal	100% of applied amount
+    
+    	CASE(Type__c,
+    		'Education',0.60*AppliedAmount__c,
+    		'Personal',0.80*AppliedAmount__c,
+    		'Housing',AppliedAmount__c,
+    		 0
+    	 )
+    
+    3. On Every Loan record corresponding customer email and phone should be displayed.
+    	Customer__r. Phone__c
+    	Customer__r.Email__c
+    
+</apex:page>

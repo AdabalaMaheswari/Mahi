@@ -1,0 +1,57 @@
+<apex:page >
+-------------------------------------------------------------------------------------------
+PageLayout : 
+-----------------------------------------------------------------------------------------
+	1. This controlles how  an object should be displayed to the profile .
+
+	2. PageLayout controlles which fields should be displayed .
+	
+	3. In which order fields should be displayed .
+	
+	4. In which format fields should be displayed .
+
+	5. Which buttons should be displayed on the detail page . 
+
+	6. It controllers the related list and fields in the related list .
+
+	7. On a Object we can create multiple pagelayouts .
+
+	8. One profile will have only one pagelayout on a object .
+
+	9.Steps to create  PageLayout :
+		Classic : 
+		Setup
+	   	|--->Build
+		     |--->Create
+		       	  |--->Object 
+					   |--->Choose Object Name 
+					        |--->PageLayouts 
+								 |--->New |Edit 
+    
+
+		Step 1: Add the Section to the pageLayout
+	
+		Step 2: Choose  no Columns and Tab order 
+
+		Step 3: Choose the Fields
+
+		Step 4: Specify the format of the fields on the Layout (Read|Write|Required) 
+		
+		Setp 5: Add the buttons to the layout .
+
+		Step 6: Add the related list to the layout.
+
+		Step 7: Specify the fields that need to be displayed on  related list .
+    			in which order the records should be displayed.
+
+		Step 8: Save 
+    
+    10. Assign the PageLayout to the profile.
+    
+    Mini Pagelayout:
+    ----------------
+	1. When we keep a cursor over the record ,pop-window will open showing you the details 
+       of the record, which is called mini-pageLayout.
+    
+    2. Every pageLayout will have corresponding mini-pageLayout.
+</apex:page>

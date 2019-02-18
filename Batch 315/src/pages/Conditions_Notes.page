@@ -1,0 +1,116 @@
+<apex:page >
+    Operators : 
+    -----------
+    a. Relational Operators :
+     	 <!--
+				< --- > Less Than 
+    			<= -- > Less Than or Equals
+				>  -- > Greater 
+				>= -- > Greater Than or Equals 			
+				==  -- > This will check LHS value is equal to RHS
+				!=  -- > Not Equals to 
+		-->
+    Note : Any condition we write will give you result in the form of true or false.
+    Examples: 
+    	1. check name is ravi
+    			name == 'ravi' 
+    
+    	2. Check weather city is Banglore 
+    
+    		city == 'Banglore'
+    
+    	3. Check weather rating is Hoot 
+    		rating == 'Hot'
+    
+    	4. Check weather annualRevenue is less than 50K
+    	   <!--
+    	   		annualRevenue < 50000
+			-->
+    	5. Check weather salary is more than 80k
+    			salary > 80000
+    
+    	6. Check weather amount is less than or equals to 50k
+    		<!--
+    		 	amount <= 50000
+			-->
+    	7. Industry is Banking 
+    			industry =='Banking'
+    
+    	8. closeDate is today
+    			closeDate == System.today()
+    
+    	9. expiryDate is 30 days from today
+    		expiryDate == System.today()+30 	
+    
+    	10. Email is abc@xyz.com
+    			email == 'abc@xyz.com'
+    
+    	11. range is greater than and equals to 90k
+    		
+    			range >= 900000
+    
+    	12.  dob is  2-Nov-1995
+			 dob == Date.newInstance(1995,11,2)
+    		
+    	Logical Operators :
+    	-------------------
+    	1. When we want to apply multiple conditions we will use logical operators 
+    		<!--
+				&&  : AND Operator  
+					 cond1 && cond2 && cond3 .....
+					 if all the conditions are true , it will return true
+
+				||   : OR Operator 
+					 : cond1 || cond2 || cond3...
+					 : If one or more conditons are true ,it will return true
+
+				!	 : NOT Operator 
+					 : If the condition is true ,it will return false.
+					 : If the condition is false ,it will return true.
+			-->
+    	Examples : 
+    	1. Check  industry is Banking and rating is hot 
+    		<!--
+    	   		Indsutry=='Banking' && rating=='Hot'
+			-->
+    	2. check rating is cold and ownership is public 
+    			<!--
+					rating =='Cold' && ownership=='Public'
+				-->
+    	3. check city is Banglore or amount is more than 50k
+    			<!--
+					city =='Banglore' || amount > 50000 
+    			-->
+    	4. Check place is SRNagar or balance is 50k
+    		<!--
+				place =='SRNagar' || balance == 50000 
+			-->
+    	5. leadsource  is Web  or product is W-Series
+    		<!--
+				leadSource=='Web' || product =='W-Series'
+			-->
+    	6. stagename is closed Won and closedate is 10 days from today
+    		<!--
+				stageName == 'Closed Won' &&  closeDate ==System.today()+10
+			-->
+    	7. stagename is Propecting or Type is new Customer 
+    		<!--
+				stageName =='Prospecting' || type=='New Customer'
+			-->
+    	8. origin is email and priority is high
+    		<!--
+				origin =='Email' && priority =='High'
+    		-->
+    	9. LoanType is Education or Housing  and Applied_Amount more than 10lacs
+    		<!--
+				loanType =='Education' || loanType=='Housing' && Applied_Amount > 1000000
+			-->
+    	10. Email is Blank  or amount is null or company is Blank
+    		<!--
+				email == '' || amount == null || company==''
+    		-->
+    	11. Email is not Blank and amount is not null
+			<!--
+				email !='' && amount !=null 
+			-->
+</apex:page>

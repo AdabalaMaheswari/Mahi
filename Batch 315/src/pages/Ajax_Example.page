@@ -1,0 +1,12 @@
+<apex:page >
+   <script src="/soap/ajax/44.0/connection.js" type="text/javascript">
+     </script>
+    <script>
+         /*   sforce.connection.sessionId='{!GETSESSIONID()}';
+              alert(sforce.connection.sessionId);
+             
+          */
+           var result=sforce.connection.login('mahi@csc.com','calvary2');
+              alert('MyResult'+result.sessionId);
+    </script>
+</apex:page>

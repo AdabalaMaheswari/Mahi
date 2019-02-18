@@ -1,0 +1,20 @@
+<apex:page >
+     Licenses :
+	-----------
+1. License will specify base-line features that user is going to get from the salesforce.
+
+2. Every user ,should have one license to login to salesforce.
+
+3. Salesforce  : 
+   a. It is desgined for those organizations who need access to complete CRM and Force.com
+      functionalities.
+
+4. Salesforce Platform :
+   a. It is designed for those organizations who need access to only force.com .
+
+   b. Users with this license cannot access crm functionalities
+
+
+5. Community License : 
+   a. This license is designed for external users to interact and make self-service activities.
+</apex:page>

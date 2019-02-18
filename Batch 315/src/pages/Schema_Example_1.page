@@ -1,0 +1,10 @@
+<apex:page controller="Schema_Example_1">
+    <apex:form >
+    	<apex:pageBlock title="Schema">
+        	<apex:pageBlockTable value="{!objResult}" var="a">
+                <apex:column value="{!a}" headerValue="Property" />
+                <apex:column value="{!objResult[a]}" />
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

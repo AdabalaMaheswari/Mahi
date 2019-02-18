@@ -1,0 +1,108 @@
+<apex:page >
+    Sam : What is the name of the Book 
+Ravi: Salesforce Development 
+Sam : What is the price of each book
+Ravi: 200.00
+Ravi : How many books you want 
+Sam  : 10 
+Ravi : Pay : 200*10 ==2000
+Sam : Any discount >>
+Ravi : 10% of total
+
+Data Involved : bookName 	===> Salesforce Development 
+	      : price		===> 200.00
+	      : noBooks		===> 10
+	      : total 		===> 200.00*10 ===> Calculated By System
+	      : discount 	===> 10% of total ==> Calculated by System : total*0.10
+	      : finalPrice	===> Calculated By System : total-discount
+
+String bookName;
+Decimal price;
+Integer noBooks;
+Decimal total;
+Decimal discount;
+Decimal finalPrice;
+bookName='Salesforce Development';
+price=200.00;
+noBooks=10;
+total=price*noBooks;
+discount=total*0.10;
+finalPrice=total-discount;
+=======================================================================================================
+Capital : What course you want 
+Student : Lightning 
+Student : what is the duration ?
+Captial : 60 days
+Student : what is the fee??
+Capital : 5000.00
+Student : Any discount??
+Capital : 5000+18% GST 
+Total  : 
+
+Data : courseName 	Lightning ,
+	duration	60,
+	fee, 		5000.00
+	gst ,		calcualted by System : fee*0.18 ==>
+	total		Calculated by System : fee+gst 
+
+String  courseName;
+Integer duration;
+Decimal fee;
+Decimal gst;
+Decimal total;
+courseName='Lightning';
+duration=60;
+fee=5000.00;
+gst=fee*0.18;
+total=fee+gst;
+====================================================================
+Bank 	: What is your companyName
+Customer: Wipro
+Bank	: How many employees you have 
+Customer: 10,000
+Bank	: What is the annaulRevenue ?
+Customer: 10Lacs
+Bank	: Which loan u want 
+Customer: Personal Loan
+Bank	: sanctionedAmount : 60% of your annualRevenue
+Customer: I want to take for 2 years
+Bank 	: Intrest : sanctionedAmount*2*0.10
+Bank    : Total :sanctionedAmount+Intrest;
+
+Data : companyName  		Wipro
+       no_of_Employees		10,000
+       annaulRevenue		10,00,000.00
+       loanType			Personal Loan
+       sanctionedAmount		Calculation : annualRevenue*0.60
+       years 			2
+       intrest			Calculation : sanctionedAmount* years*0.10
+       total			sanctionedAmount+intrest;
+
+String companyName;
+Integer no_of_Employees;
+Decimal annualRevenue;
+String loanType;
+Decimal sanctionedAmount;
+Integer years;
+Decimal intrest;
+Decimal total;
+companyName='Wipro';
+no_Of_Employees=10000;
+annualRevenuue=1000000.00
+loanType='Personal Loan';
+years=2;
+sanctionedAmount=annualRevenue*0.60;
+intrest=sanctionedAmount*years*0.10;
+total=sansctionedAmount+intrest;
+==============================================================================================
+Customer Name : Wipro
+Indsutry      : Banking
+Rating	      : Hot 
+Ownership     :Public 
+salary	      : 10,000.00
+bonus	      : 10% of AnnualRevenue
+tax	      	  : 20% of salary
+gst 	      : 5 % tax 
+
+=================================================================================================
+</apex:page>

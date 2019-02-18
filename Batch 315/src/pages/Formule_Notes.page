@@ -1,0 +1,130 @@
+<apex:page >
+   UseCase 1: 
+    Object		: Lead 
+    FieldName	: Lead Score 
+   	Return Type	: Number with zero decimals 
+    Rule		: Field Name		ISNULL/ISBLANK		ISNOT NULL/BLANK	 >0
+    			  ---------------------------------------------------------------
+    			  FirstName			0					10
+    			  Phone				0					10
+    			  Email				0					10
+    			  AnnualRevenue		0										20
+    
+    			IF( ISBLANK(FirstName) , 0, 10 )  +
+    
+    			IF( ISBLANK(Phone) ,0,10 )		 +
+    	
+    			IF( ISBLANK(Email),0,10 )		+
+    	
+    			IF(AnnualRevenue> 0,20, 0)
+    
+    Usecase 2: 
+    Object 		: Campaign
+    FieldName	: Logo
+    Return Type : Text 
+    
+            Step 1 : Load the static Resource 
+                    Setup
+                    |---> Build
+                          |---> Develop
+                                |---> Lighnting Component
+                                      |--->Static Resource
+                
+            Step 2: Enter Name  			:capital
+            Step 3: Choose the file 		: capitallogo
+            Step 4: Save 
+            Step 5: Click on View File and copy the url
+            https://ap5.visualforce.com/resource/capital
+    
+    Formule 	: IMAGE ('/resource/capital','URL NOT FOUND');
+    
+    https://ap4.salesforce.com/0816F0000010rI2
+    UseCase  : 3
+    Object		: Lead 
+    Field 		: Rating URL
+    Return Type	: Text 
+    Rule		: LeadScore 		URL 
+    			  --------------------------
+    			   10				/img/samples/stars_100.gif
+    			   20				/img/samples/stars_200.gif",
+    			   30				/img/samples/stars_300.gif",
+    			   40				/img/samples/stars_400.gif",
+    			   50				/img/samples/stars_500.gif",
+    			   0				/img/samples/stars_000.gif"
+    
+    	CASE (LeadScore__c ,
+    		10,'/img/samples/stars_100.gif',
+    		20,'/img/samples/stars_200.gif',
+    		30,'/img/samples/stars_300.gif',
+    		40,'/img/samples/stars_400.gif',
+    		50,'/img/samples/stars_500.gif',		
+    		'/img/samples/stars_000.gif'
+        )
+    
+    
+    ===============================
+    IMAGE( 
+CASE( Priority, 
+"Low", "/img/samples/flag_green.gif", 
+"Medium", "/img/samples/flag_yellow.gif", 
+"High", "/img/samples/flag_red.gif", 
+"/s.gif"), 
+"Priority Flag")
+    ====================================
+    UseCase : 4
+    Object		:Lead 
+    Field 		:Rating_Image 
+    Return Type :Text 
+    Rule		: Print the image 
+    			  IMAGE(Rating_URL__c,'Image not found')
+    
+    
+    UseCase  : 5 
+    Object		:Loan
+    Field		:Processing Fee
+    ReturnType	:Currency
+    Rule		:If Loan Type is Education then set 
+    			 Processing Fee as 5000 else 2000
+    
+    IF(
+    		ISPICKVAL(Type__c,'Education'),
+    		5000,
+    		2000
+    )
+    
+    UseCase   : 6 
+    Object	   	: Loan__c
+    Field	   	: IntrestRate
+    ReturnType 	: Percent
+    Rule		: Type			Intrest Rate
+    			  ---------------------------
+    			   Education	10
+    			   Housing		12
+    			   Personal		14
+    			   none			0
+    
+    	CASE(Type__c, 
+    		 'Education',0.10,		
+    		 'Housing',0.12,
+    		 'Personal',0.14,
+    		  0
+    	)
+    UseCase     : 7 
+    Object	   	: Loan__c
+    Field	   	: Instalments
+    ReturnType 	: Number
+    Rule		: Type			Intrest Rate
+    			  ---------------------------
+    			   Education	48
+    			   Housing		120
+    			   Personal		32
+    			   none			0
+    
+    UseCase  	: 8
+    Object		: Opportunity 
+    Field		: Age 
+   	ReturnType	: Number 
+    Rule 		: calculate how many day back the record was created,.
+    	TODAY()-DATEVALUE(CreatedDate)	
+    
+</apex:page>

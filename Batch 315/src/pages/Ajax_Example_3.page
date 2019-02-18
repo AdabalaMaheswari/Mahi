@@ -1,0 +1,57 @@
+<apex:page id="page">
+     <script src="/soap/ajax/44.0/connection.js" type="text/javascript">
+     </script>
+     <apex:form id="fm">
+         <script>
+             function callMe(){
+                
+                 sforce.connection.sessionId='{!GETSESSIONId()}';
+                 var name=document.getElementById('page:fm:pb:pbs:pbsi1:name').value;
+                 var phone=document.getElementById('page:fm:pb:pbs:pbsi2:phone').value;
+                 console.log(name);
+                 console.log(phone);
+                // Account acc =new Account();
+                var acc=new sforce.SObject('Account');
+                acc.Name=name;
+                acc.Phone=phone;
+                var accounts =[acc];
+                var result=sforce.connection.create(accounts);
+                recordId=result.Id;
+                alert(result);
+                 
+             }
+             function show(){
+                 sforce.connection.sessionId='{!GETSESSIONId()}';
+                 var queryResult=sforce.connection.query('select id,name,Rating,Ownership from Account where createddate=TODAY');                 var acc=new sforce.SObject('Account');
+                 var records =queryResult.getArray('records');
+                 for(var i=0;i<records.length;i++){
+                 	var acc =new sforce.SObject('Account');
+                    acc.Id=records[i].Id;
+                 	acc.Rating='Hot';
+                 	acc.Ownership='Public';
+                 	var accounts =[acc];
+                  }
+                 	var result=sforce.connection.update(accounts);
+                      alert(result);
+             
+             }
+         </script>
+         <apex:pageBlock title="Account" id="pb">
+             <apex:pageBlockButtons location="top">
+                 <apex:commandButton value="Save" oncomplete="callMe()" />
+                 <apex:commandButton value="Update" oncomplete="show()" />
+                 <apex:commandButton value="Delete" oncomplete="invoke()" />
+             </apex:pageBlockButtons>
+             <apex:pageBlockSection id="pbs" columns="1">
+                 <apex:pageBlockSectionItem id="pbsi1">
+                     <apex:outputLabel value="Enter Name" />
+                     <apex:inputText id="name" />
+                 </apex:pageBlockSectionItem>
+                 <apex:pageBlockSectionItem id="pbsi2">
+                     <apex:outputLabel value="Enter Phone" />
+                     <apex:inputText id="phone" />
+                 </apex:pageBlockSectionItem>
+             </apex:pageBlockSection>
+         </apex:pageBlock>
+     </apex:form>
+</apex:page>

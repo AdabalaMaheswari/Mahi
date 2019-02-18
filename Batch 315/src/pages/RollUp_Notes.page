@@ -1,0 +1,106 @@
+<apex:page >
+--------------------------------------------------------------------------------
+7. Rollup-Summary : 
+--------------------------------------------------------------------------------
+	1.Rollup summary fields can be created only on master object in master-detail 
+	  relation.
+
+	2.Rollup summary is used for applying aggregate funtions on corresponding 
+	  child records
+
+	3.Count() : This will return count of no of child records which partispacting in the 
+   		        rollup operation.
+
+	4.sum(Number/Currrency/ Percent) : This is used to make the summarized value
+           of given child records partispacting in the rollup
+
+	5.Max(Number/Currency/Percent/Date/DateTime): 
+	  This is used to return the maximum value from the corresponding the child records
+	  partispating in the  rollup operation.
+
+	6.MIN(Number/Currency/Percent/Data/DateTime) ; 
+	  This will return the minimumvalue from the corresponding child record which are 
+		   partispating the rollup operation
+
+	7.We can create the filter condition to specify which child records should partispate 
+	  in the rollup operation.
+	
+		a. allow all the child records  :if we choose this all the child records of the 
+				master record will partispate in the relation.	
+
+		b. Allow only those child records which are meeting the filter condition.
+		   if we choose this ,only those child records which are meeting the 
+		   filter condition can partispate in the relation.
+
+	8.We can create 25 rollup summary fields on a object .
+		
+-----------
+UseCase :
+-----------
+	1.Create Custom objects :
+	
+		1. Object 		Course  :
+		
+			Fields  :   Field Name 		Field Label 	DataType
+						----------------------------------------
+						Name			Name			Text
+						StartDate		startDate		Date
+	
+		2. Student :
+		
+			Fields : 	Field Name		Field Label		DataType	Options
+						-----------------------------------------------------
+						FirstName		FirstName		Text		-
+						
+						LastName		LastName		Text
+						
+						Amount			Amount			Currency
+						
+						Mode 			Mode		    PickList  	Online
+																	Cash
+						Course     		Course		    Master-Detail(Course)
+
+
+		3. Create a rollup summary field  on course object 
+	
+			Field Name    : BatchSize 
+
+			Child Object  : Student
+	
+			RollUpd	      :Count()
+
+			Records	      : All Records
+
+
+		4. Create a rollup summary field on Course object
+
+			Field Name 	: Total  Amount
+
+			Child Object	: Student
+
+			Rollup 	    	: Sum(Amount)
+	
+			Records     	: All Records
+
+
+		5.  Create a rollup summary field on Course object
+
+			Field Name 	: Total online Payments
+
+			Child Object: Student
+
+			Rollup 	    : Sum(Amount)
+	
+			Records     : only those student records whose mode of payment is online .
+
+
+		6.Create a rollup summary field on Course object 
+
+			Field Name 	: Total Cash Payments
+
+			Child Object: Students
+
+			Rollup	   	: Sum(Amount)
+
+			Records   	: only those Student records whose mode of  payment is cash
+</apex:page>

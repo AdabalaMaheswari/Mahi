@@ -1,0 +1,60 @@
+<apex:page controller="NewCaseListController" >
+    <apex:pageBlock title="New Case List" id="cases_list">            
+			<apex:repeat value="{! newcases }" var="case">			   
+				<apex:outputLink value="/{! case.id}">
+				ID:  {! case.id }
+				</apex:outputLink><br/>
+				<apex:outputLink value="/{! case.id}">
+				Case Number:  {! case.CaseNumber }
+				</apex:outputLink><br/>    			
+			</apex:repeat>            
+        </apex:pageBlock>
+</apex:page>
+
+<!--
+
+select Id,Name, StageName, LeadSource, Account.Name, Account.Industry,Account.Rating from Opportunity
+
+select LastName, FirstName, Account.Name, Account.Industry, Account.Rating, Account.Phone from Contact
+
+
+select Mode__c, Amount__c, loans__r.Type__c, loans__r.ApplieedAmount__c from Payment__c
+================================================================================
+Aggregate Function:-
+------------------
+List<AggregateResult> aggList=[select StageName, SUM(Amount)total, MAX(Amount)maxamt, MIN(Amount)minamt, AVG(Amount)avgamt
+                                   from Opportunity Group by StageName ];
+
+	for(AggregateResult result:aggList){
+    	String stage=(String)result.get('StageName');
+        Decimal total=(Decimal)result.get('total');
+        Decimal max=(Decimal)result.get('maxamt');
+        Decimal min=(Decimal)result.get('minamt');
+        Decimal avg=(Decimal)result.get('avgamt');
+        
+        System.debug('=====>>Stage<<========');
+        System.debug('Sum ='+total);
+        System.debug('Max='+max);
+        System.debug('Min='+min);
+        System.debug('Ave='+avg);
+	}
+
+----------------------------------------------------------
+1. SELECT Id,Name, Industry, Rating FROM Account WHERE CreatedDate = YESTERDAY
+
+2. select Id, Name, StageName, LeadSource from Opportunity where CloseDate=TODAY
+
+3. select Id, Name, StageName, LeadSource from Opportunity where CloseDate<TOMORROW
+
+4. select Id, Name, StageName, LeadSource from Opportunity where CloseDate<LAST_WEEk
+
+5. select Id, Name, StageName, LeadSource from Opportunity where CloseDate<NEXT_WEEk
+  m                     
+6. select Id, Name, Industry, Rating from Account where CreatedDate<LAST_N_WEEKS:3
+
+7. select Id, Name, Industry, Rating, Phone from Account where DAY_IN_MONTH(CreatedDate)<10
+
+8. select Id, Name, Industry, Rating, Phone from Account where DAY_IN_YEAR(CreatedDate)<1
+
+9. select Id, Name, Industry, Rating, Phone from Account where WEEK_IN_MONTH(CreatedDate)<5
+-->

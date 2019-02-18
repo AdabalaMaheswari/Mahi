@@ -1,0 +1,277 @@
+<apex:page >
+=============================================================================================		
+Relations : 
+==============================================================================================			
+	1. Relations are used to establish connection between two or more objects.
+	
+	2. Salesforce provides different types of relations 
+	
+		1. Master-Detail Relations
+		
+		2. Lookup Relation 
+		
+		3. Many -Many Relation (Junction object)
+		
+		4. Hirerarchial Relations 
+		
+		5. External Lookup Relations 
+		
+	3.Master-Detail :
+	
+		1. It is one to many relationship between two objects.
+		
+		2. Master-Detail field can be created only on Custom objects.
+		
+		3. Master-Detail field can be created only on those custom objects on which
+		   their are no records in it.
+		   
+		4. Master-Detail field is a required field.
+		
+		5. In one to Many relation, on many side of the realtion , Master-Detail field 
+		    is created.
+
+		6. Object on which Master-Detail Field is creted that object we call it as 
+		   child object /Detail Object/ Related Object.
+		   
+		7.  In one to Many relation of Master-Detail ,
+		    Object to whose data master-detail field is reffering that object is called
+			master object/Parent Object.
+		   
+		8. Which ever the record that master-detail field is reffering,That 
+		   record Id is stored in the Master-Detail field.
+		   
+		9. If the master record is deleted ,corresponding child records are also deleted.
+           but deleted child records will not displayed to recylebin.
+
+		10.If we undelete the master record ,corresponding child records are also undeleted.
+		
+		11.Object in which Master-Detail field  is created , That object will not have 
+		   any owner field in it.
+		   
+		12. Who ever is the owner of the master record ,he will be the owner of 
+		    corresponding child records.
+			
+		13.Sharing Setting	
+		
+			This will specify  the minimum access level required on the Master record 
+			to create, edit, or delete related Child records:
+			
+			a. Read Only:  
+			   If you choose this option,Allows users who has atleast Read access to 
+			   the Master record can perform  create, edit, or delete operations on	
+			   corresponding child records.
+						   
+			b.Read/Write: 
+			   If you choose this option,Allows users who has atleast Read|Write access 
+			   to the Master record can perform  create, edit, or delete operations on	
+			   corresponding child records.
+			   
+		14. Allow Reparenting  : If this option is enabled ,Child can change it's master 
+								 record after creation of child record.
+				
+		15. An object can be a Master to any no of objects .
+		
+		
+			1.	A			2.	A				3. 			A
+				|	Yes         |       yes 				|			Yes
+				B			----------  			------------------
+							|		 |				|       |        |
+							B		 C				B		C		 D
+							
+		16. On an object we can create only two master -detail fields.
+		
+				A				 A		B				A	   B     C
+			1.	|  yes		2. 	 |      |      Yes	    |      |     |	Not Allowed
+				B				 ---------				--------------
+								      |                        |
+									  C						   D
+									  
+		17. Child object can be parent to any other objects upto three levels
+		
+			1.  A		2.     A		3.  A 			4.  A 
+			    | Yes		   | Yes     	|	Yes		    |  No
+			    B 			   B			B				B
+			 	               |			|			    |
+							   C			C			    C
+											|				|
+											D				D
+															|
+															E
+		   
+		18.if an object has two parents on it ,it can not be parent to any other objet.
+
+				A		  B
+				|         |
+				-----------
+					 |
+					 C
+					 |   Not accepted
+					 D
+					 
+		19.Maximum structure what we can form using master-Detail
+			
+				A  		X
+				|	    |
+				B		Y
+				|		|
+				C 		Z
+				|		|
+				---------
+					|
+					D
+		------------------------------------------			 
+	4. Junction Object :
+
+		1. Junction object is a custom object .
+
+		2. Junction object has two master -detail fields on it .
+
+		3. Junction object maintains Many to Many relation.
+
+		4. First Master -Detail field created on the junction object is called primary master .
+
+		5. Second Master-Detail field created on the Junction object is called secondary master.
+
+		6. Look and feel and ownership is inherited  from primary master .
+
+		7. If you delete any master record ,corresponding child records are deleted .
+
+		8. If any master record  has  more than 200 child records in the junction object ,
+		   then we cannot delete that master record . 
+
+
+		UseCase :
+
+			1. Create  two Custom Objects 
+
+				a. Course 
+
+					SNO 	Field Label 	Field Name 	DataType 	Options
+				---------------------------------------------------------------
+					1		Coure Name	 	Name		Text		-
+
+					2. 		Fee		 		Fee			Currency	-
+		
+					3.  	Status		 	Status		PickList	Active,InActive
+
+
+				b. Branch
+
+					SNO	Field Label			Field Name	DataType	Options
+				-----------------------------------------------------------------
+					1	Branch Name			Name		Text		-
+
+					2. 	Phone				Phone		Phone		-
+
+					3. 	Email				Email		Email		-
+
+	
+
+			2. Create a Custom Object student using Schema Builder 
+
+	
+					SNO		Field Label			Field Name	DataType	Options
+				-----------------------------------------------------------------
+					1.		StudentId			Name		AutoNumber	-
+
+					2. 		FirstName			FirstName	Text		-
+
+					3. 		LastName			LastName	Text		-
+
+					4. 		Phone				Phone		Phone		-
+
+					5. 		Email				Email		Email		-
+
+					6.		Course				Course		Master-Detail(Course)
+
+					7.		Branch				Branch		Master-Detail(Branch)
+
+
+			3. Goto Student Detail page and add the fields to the pagelayout.
+
+			4. Create new Application CaptitalInfo
+
+			5. Create new Custom object tabs for Course ,Branch ,Student and them to 
+			   CapitalInfo application.
+
+		
+	5.Lookup Relation :
+	
+		1. It is one-to-Many Relation .
+		
+		2. It can be created  on both standard and custom object.
+		
+		3. It can be created on both objects which contains data or which doesnt contain data.
+		
+		4. If you delete master record,corresponding child records will not be deleted.
+		
+		5. Owner of parent record and child record can be same or different.
+		
+		6. We can create 40 lookup fields on a object .
+		
+		7. It is an optional field.
+		
+		8. We can create self lookup on a object.
+		
+		9. Dont Allow deletion of Lookup Record which is a part of Lookup relation .
+		   if you enable this option parent record which has child using lookup cannot be 
+		   deleted.
+			
+		
+	6. Hirearchical Relation :
+	
+		1. This can be created only on user object.
+		2. It is one-to-one relation ,
+		3. This is used to create a relation between user to user .
+		4. Steps to create Hirerarchiacal relation .
+		
+				Setup	
+				   |---Build	
+						  |---Customize		
+									|----User 
+										   |---Fields 
+												   |---Custom Fields and Relations 
+																		|----new 
+																		
+				Step 1: Choose datatype as hirerarchical relation 
+				
+				Step 2: Enter field Name and details  
+				
+				Step 3: Add field level security 
+				
+				Step 4: Add the to the pageLayout.
+				
+Work around Process :Steps to create Master-Detail on Custom Object which 
+              contains the data
+			  
+	Step 1 : Create  Lookup field choosing  master object as parent .
+	
+	Step 2:  Goto every record existing the child object and assign some value 
+			 in the Lookup field 
+			 
+	Step 3: Change the data type from lookup to master-detail	
+			
+				Setup	
+					|--Build	
+							|---Create 
+									|---Object		
+											|--Object Name		
+														|---Fields
+																|--Choose the lookupfield
+																
+				Step 1: Choose the Lookup field and click on edit 
+				
+				Step 2: Change Type 
+				
+				Step 3 :Choose Master-Detail 
+				
+				Step 4: Save
+														
+	1. Standard obejct  as master and Standard Object as child 	: false 
+	
+	2. Standard object as Master and custom object as child    	: true 
+	
+	3. Custom Object as Master and Standard object as child 	: false 
+	
+	4. Custom Object as Master and Custom Object as Child    	: true
+</apex:page>

@@ -1,0 +1,92 @@
+<apex:page >
+    Object: 
+    --------
+    1. Object is a instance of a class .
+    2. Syntax : 
+    	 new ClassName(parameters)
+    	 |	  |
+    	 a	  b
+    	
+    	a. new : 
+    	   1. new is a keyword
+    	   2. It is used to allocate the memory for the datamemebers of the class.
+    	b. Constructor : 
+    	   1. Once the memory is allocated constructor is auto invoked.
+    	   2. This will initialize the datamembers of the class.
+    
+    3. We create a refference variable to reffer to the objects created by new keyword.
+    
+    	Syntax :
+    		DataType  variable =new DataType();
+    		Note : DataType should be non-primitive : Class ,Sobject,Collection
+    
+    		Example : 
+    		Student std =new Student();
+    		Student : DataType of Type Apex class Student 
+    		std 	: refference variable 
+    	    Note 	:Std will reffer to the memory allocated by new keyword:
+    
+    Example : 
+    1. Create a apex class Student with name ,phone ,city 
+    2. Create a constructor and assign the values of name ,phone ,city 
+    3. Create a object and print the name ,phone and city
+    	public class Student{
+    		public String name;
+    		public String phone;
+    		public String city;
+    		public Student(){
+    			name='Kiran';
+    			phone='040-1234';
+    			city='Hyd';
+    		}
+    	}
+    ==> Open Debug Annonymous window
+    	 Student std  =new Student();
+    	 System.debug(std.name);
+    	 System.debug(std.phone);
+    	 System.debug(std.city);
+    
+    Example : 2
+    1. Create a apex class Employee with lastname,firstName,exp;
+    2. Create a constructor and assign the values of lastname ,firstname and exp
+    3. Create a object and print the values.
+    	public class Employee{
+    		public String lastName;
+    		public String firstName;
+    		public Decimal exp;
+    		public Employee(){
+    			lastName='Jasti';
+    			firstName='Kalyan';
+    			exp=10;
+    		}
+    	}
+    ==> Open Anonymous window 
+    	Employee emp =new Employee();
+    	System.debug(emp.lastName);
+    	System.debug(emp.firstName);
+    	System.debug(emp.exp);
+    
+    Example :3 
+    1. Create a apex class ProductInfo with name ,price,quantity
+    2. Create a constructor and assign the values of name,price,quantity
+    3. Create a method show which will print all the values 
+    4. Create a object and call show method.
+    	public class productInfo{
+    		String name;
+    		Decimal price;
+    		Integer quantity;
+    		public ProductInfo(){
+    			name='IPhone';
+    			quantity=10;
+    			price=10000.00;
+    		}
+    		public void show(){
+    			System.debug(name);
+    			System.debug(price);
+    			System.debug(quantity);
+    		}
+    	}
+    ==>Open Anonymous window 
+    	ProductInfo p=new ProductInfo();
+    	p.show();
+</apex:page>

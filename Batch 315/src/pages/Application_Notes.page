@@ -1,0 +1,94 @@
+<apex:page >
+    Application :
+    --------------
+    1. Application is a collection of tabs .
+    2. There are two types of application
+    	a. Standard Application 
+    	b. Custom Application
+    3. Standard Application : 
+    	a. Applications created by the salesforce are called standard Application .
+    	b. Example : Sales ,CallCenter,Marketing....
+    	c. Standard Application cannot be deleted ,but they can be customized.
+    4. Custom Applications :
+    	a. Applications created by the user are called custom Applications .
+    	b. They can be deleted or Customized as per business requiremet.
+    
+    5. Steps to Create Custom Applications
+    	Classic : 
+    	---------
+    	Setup
+    	|--->Build
+    		 |--->Create
+    			  |--->Apps
+    				   |---> New Application
+    	
+    	Step 1: Choose Application Type : Custom App
+    	Step 2: Enter Application Details:
+    			App Label 	: Loan Management
+    			App Name	: Loan_Management_App
+    			
+    			Note : Application will be visable to the users on the UI with App Label
+    			Note : If we want to reffer to the application programmatically then we use app name.
+    
+    	Step 3: Choose the Logo for application 
+    		    1.Application Logo should Externally available Image in the document 
+    			2.Size should be more than 3KB less than 20KB
+    			3. Width and Hieght should be 300px and 55px
+    
+    	Step 4: Choose the tabs 
+    			1. Choose the tabs that should be visable in the application.
+    			2. Choose Default Landing tab 
+    			   a. Tab ,which choosen as default landing tab,Content of that tab will be visable 
+    				  on the homepage of the application.
+    			Example : Choose Lead,Account,Contact,Opportunity 
+    			Default Landing : Account 
+    	Step 5: Choose the profile for whom the application shuould be visable .
+    			Example : System Adminstrator
+    
+    	Lightning :
+    	----------
+    	Setup
+    	|---> Platform Tools
+    		  |---> Apps 
+    				|---> App Manager 
+    					  |--->New Lightning App
+    
+    	Step 1: Enter AppDetails 
+    		    a. Enter App Name : Mutual Funds 
+    			b. Developer Name : Mutual_Funds
+    			c. Enter Description :
+    			d. Choose the Logo
+    			
+    	Step 2: Choose the Navigation Type 
+    			a. Choose Nagigation as Standard Navigation
+    
+    	Step 3: Choose Utility Bar items 
+    			a. Choose Chatter, History
+    
+    	Step 4: Choose the tabs for the application 
+    			Account,Case,Contact
+    	
+    	Step 5: Choose the profile for whom the application should be visable.
+    			Example : System Adminstration
+    
+    	
+    Q:: How many custom Applications we can create :
+    	
+    	Edition			No Applications 
+    	---------------------------------
+    	Developer 		10 APPS
+    		
+    	Enterprise		10 APPS
+    		
+    	Unlimited 		Unlimited 
+    		
+    Note : We can upgrade the classic application as Lightning version 
+    		
+    		Setup
+    		|--->Build
+    			 |---> Create
+    				   |---> Apps
+    						 |---> Choose the application
+    							   |---> Edit
+    									 |--> Enable Show in lightning version 
+</apex:page>
